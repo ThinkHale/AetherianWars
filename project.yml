@@ -25,6 +25,7 @@ targets:
         buildPhase: resources
         excludes:
           - "Assets.xcassets"
+          - "**/README.md"
       - path: App/Resources/Assets.xcassets
       - path: App/PrivacyInfo.xcprivacy
         buildPhase: resources

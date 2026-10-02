@@ -1,5 +1,7 @@
 # Aetheria Rising: Clash of the Crossing
 
+[![CI](https://github.com/ThinkHale/AetherianWars/actions/workflows/ci.yml/badge.svg)](https://github.com/ThinkHale/AetherianWars/actions/workflows/ci.yml)
+
 A 2D fighting game for iPhone and iPad set in the world of
 [Aetheria Rising](https://github.com/ThinkHale/aetheria.rising). The thirteen
 commanders of Aetheria (Romans, Egyptians, Persians and Han, drawn out of

@@ -183,6 +183,15 @@ public struct CPU: Sendable {
         // Use a full meter.
         if me.meter >= 100, distance < superRange(me), rng.chance(difficulty.superChance * 0.03) { return [.superArt] }
 
+        // An archer pressed close slips away; one being approached backs off
+        // before it gets that far.
+        let wall = abs(me.position.x) > Match.stageHalfWidth - 90 && (me.position.x > 0) == (me.facing < 0)
+        if me.hero.archetype == .archer, !wall {
+            let closing = (foe.position.x - me.position.x) * foe.velocity.x < 0
+            if distance < 130, rng.chance(0.05 + difficulty.aggression * 0.03) { return rng.chance(0.6) ? [.dash, back] : [.up, back] }
+            if closing, distance < 260, rng.chance(0.04 + difficulty.aggression * 0.02) { return [.dash, back] }
+        }
+
         // Up close: strike, throw or guard.
         if distance < 96 {
             let roll = rng.unit()
@@ -258,7 +267,7 @@ public struct CPU: Sendable {
 
     private func useSpecialAsFinisher(_ me: Fighter) -> Bool {
         switch me.hero.special {
-        case .imperialResolve, .counter, .partingShot: false
+        case .imperialResolve, .counter, .partingShot, .stratagem, .eyeOfHorus, .sunlitVolley: false
         default: true
         }
     }

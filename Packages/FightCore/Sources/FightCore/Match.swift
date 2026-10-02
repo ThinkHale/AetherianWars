@@ -682,7 +682,8 @@ public struct Match: Sendable {
             def.health -= chipDamage
             if def.health <= 0 { def.health = chip > 0 && !config.training ? 0 : 1 }
             def.action = .blockstun; def.frame = 0; def.stun = blockstun
-            def.velocity.x = knockback.x * 1.15 * direction
+            // Guarded projectiles push harder, so keeping someone out works.
+            def.velocity.x = (fromProjectile != nil ? max(knockback.x, 7) : knockback.x * 1.15) * direction
             def.meter = min(100, def.meter + 2)
             def.stats.blocks += 1
             fighters[d] = def
@@ -809,6 +810,11 @@ public struct Match: Sendable {
         if spec.targetsEnemy {
             let enemy = fighters[1 - owner]
             origin = Vec(enemy.position.x + enemy.velocity.x * 8, spec.origin.y)
+            // A seal reaches only so far.
+            if spec.kind == .seal {
+                let reach = 340.0
+                origin.x = min(f.position.x + reach, max(f.position.x - reach, origin.x))
+            }
         }
         if spec.kind == .seal || spec.kind == .dust { origin.y = 0 }
         origin.x = min(Self.stageHalfWidth, max(-Self.stageHalfWidth, origin.x))

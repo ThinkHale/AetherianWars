@@ -121,14 +121,20 @@ public enum Roster {
         .zhaoLin, .weiJian, .meiLin,
     ]
 
-    private static func stats(_ archetype: Archetype, stature: Double = 1, power: Double = 1, toughness: Double = 1, speed: Double = 1, health: Double = 1) -> HeroStats {
+    private static func stats(_ archetype: Archetype, stature: Double = 1, power: Double = 1, toughness: Double = 1, speed: Double = 1, health: Double = 1, reach: Double = 1) -> HeroStats {
+        var stats = baseStats(archetype, stature: stature, power: power, toughness: toughness, speed: speed, health: health)
+        stats.reach *= reach
+        return stats
+    }
+
+    private static func baseStats(_ archetype: Archetype, stature: Double, power: Double, toughness: Double, speed: Double, health: Double) -> HeroStats {
         switch archetype {
         case .guardian:
-            HeroStats(health: 1100 * health, walkSpeed: 3.0 * speed, dashSpeed: 9.5 * speed, jumpVelocity: 15.5, power: 1.06 * power, toughness: 0.94 * toughness, reach: 1.0, stature: 1.04 * stature)
+            HeroStats(health: 1100 * health, walkSpeed: 3.0 * speed, dashSpeed: 9.5 * speed, jumpVelocity: 15.5, power: 1.0 * power, toughness: 0.97 * toughness, reach: 1.0, stature: 1.04 * stature)
         case .rider:
             HeroStats(health: 980 * health, walkSpeed: 4.1 * speed, dashSpeed: 12.5 * speed, jumpVelocity: 16.5, power: 1.0 * power, toughness: 1.0 * toughness, reach: 1.1, stature: 1.0 * stature)
         case .archer:
-            HeroStats(health: 920 * health, walkSpeed: 3.6 * speed, dashSpeed: 11.0 * speed, jumpVelocity: 17.0, power: 0.96 * power, toughness: 1.04 * toughness, reach: 0.95, stature: 0.97 * stature)
+            HeroStats(health: 960 * health, walkSpeed: 3.6 * speed, dashSpeed: 11.0 * speed, jumpVelocity: 17.0, power: 1.0 * power, toughness: 1.0 * toughness, reach: 0.95, stature: 0.97 * stature)
         }
     }
 
@@ -205,7 +211,7 @@ public enum Roster {
                  victory: "Remember this. Fear is a teacher too.",
                  defeat: "Enjoy it. It will not be repeated.",
                  bio: "A general of the Persian guard who trusts only power and results, openly contemptuous of softness and of Atossa. His rival kingdom and his feud with her are the stuff of Aetheria's border wars.",
-                 stats: stats(.guardian, stature: 1.08, power: 1.06, speed: 0.92, health: 1.04), rival: (.atossa, "Atossa. Your soft heart will be the end of Persia. Let me end it first."))
+                 stats: stats(.guardian, stature: 1.08, power: 0.98, speed: 0.92, health: 1.0), rival: (.atossa, "Atossa. Your soft heart will be the end of Persia. Let me end it first."))
         case .weiJian:
             Hero(id: id, name: "Wei Jian", title: "The Survivor of the Han", empire: .han, archetype: .guardian,
                  special: .ironFormation, specialName: "Iron Formation",
@@ -229,7 +235,7 @@ public enum Roster {
                  victory: "The scales settle. Rest now.",
                  defeat: "A dream warned me of this. I did not listen.",
                  bio: "High Priestess of Amun who keeps the balance between kingdoms with omens, grain ledgers and an army she would rather not use. She answers questions with questions.",
-                 stats: stats(.archer, toughness: 0.98), rival: (.livia, "Lady Livia. Rome's balance and mine are not the same scale."))
+                 stats: stats(.archer, toughness: 0.98, reach: 1.18), rival: (.livia, "Lady Livia. Rome's balance and mine are not the same scale."))
         case .arsames:
             Hero(id: id, name: "Arsamis", title: "The Persian Strategist", empire: .persia, archetype: .rider,
                  special: .levy, specialName: "Satrap's Levy",
@@ -281,7 +287,7 @@ public enum Roster {
         case .meiLin:
             Hero(id: id, name: "Mei Lin", title: "The Archer of a Thousand Plans", empire: .han, archetype: .archer,
                  special: .stratagem, specialName: "Thousand Bolt Stratagem",
-                 specialDescription: "Sets a seal on the ground ahead. A moment later it bursts.",
+                 specialDescription: "A gust from the iron fan, and a seal set under the enemy's feet that bursts a moment later.",
                  superName: "The Thousandth Plan", superDescription: "Every seal she ever set goes off at once.",
                  weapon: "Iron fan and repeating crossbow", signature: "Jade Tally of Command",
                  quote: "For years, they used my ideas and remembered their names. Now I will build something they cannot erase.",

@@ -173,22 +173,22 @@ public struct MoveSet: Sendable {
                         knockback: Vec(10, 8), impact: .heavy, knocksDown: true, counterWindow: 4...30)
         case .volley:
             let bolt = ProjectileSpec(kind: .bolt, origin: Vec(52, 112 * s), velocity: Vec(15, 0), box: LocalBox(x: -18, y: -6, width: 36, height: 12),
-                                      damage: 42, hitstun: 18, blockstun: 12, knockback: Vec(3, 0), lifetime: 80, impact: .light)
-            return Move(slot: .special, name: name, startup: 13, active: 9, recovery: 20, damage: 0,
+                                      damage: 48, hitstun: 18, blockstun: 12, knockback: Vec(3, 0), lifetime: 80, impact: .light)
+            return Move(slot: .special, name: name, startup: 13, active: 9, recovery: 16, damage: 0,
                         hitstun: 0, blockstun: 0, hitbox: LocalBox(x: 0, y: 0, width: 0, height: 0),
                         knockback: .zero, impact: .light, chip: 0.1,
                         projectiles: [(13, bolt), (21, bolt)])
         case .partingShot:
             var arrow = ProjectileSpec(kind: .arrow, origin: Vec(40, 120 * s), velocity: Vec(14, 0), box: LocalBox(x: -20, y: -6, width: 40, height: 12),
-                                       damage: 66, hitstun: 22, blockstun: 14, knockback: Vec(4, 0), lifetime: 70, impact: .medium)
+                                       damage: 76, hitstun: 22, blockstun: 14, knockback: Vec(4, 0), lifetime: 70, impact: .medium)
             arrow.priority = 1
-            return Move(slot: .special, name: name, startup: 8, active: 6, recovery: 18, damage: 0,
+            return Move(slot: .special, name: name, startup: 8, active: 6, recovery: 13, damage: 0,
                         hitstun: 0, blockstun: 0, hitbox: LocalBox(x: 0, y: 0, width: 0, height: 0),
                         knockback: .zero, impact: .medium, chip: 0.1,
                         motions: [Motion(from: 1, to: 20, velocity: Vec(-7.5, 0))],
                         invulnerable: 1...6, projectiles: [(12, arrow)])
         case .flankingCharge:
-            return Move(slot: .special, name: name, startup: 10, active: 18, recovery: 18, damage: 104,
+            return Move(slot: .special, name: name, startup: 10, active: 18, recovery: 20, damage: 92,
                         hitstun: 30, blockstun: 14, hitbox: LocalBox(x: -10, y: 30, width: 90, height: 120),
                         knockback: Vec(8, 9), impact: .heavy, launches: true, chip: 0.1,
                         motions: [Motion(from: 8, to: 28, velocity: Vec(16, 0))],
@@ -203,24 +203,24 @@ public struct MoveSet: Sendable {
                         motions: [Motion(from: 4, to: 20, velocity: Vec(14, 0))],
                         projectiles: [(5, dust)], onHitGrant: ConditionGrant(condition: .dusted, frames: 150, magnitude: 0.45))
         case .armoredAdvance:
-            return Move(slot: .special, name: name, startup: 22, active: 6, recovery: 22, damage: 132,
+            return Move(slot: .special, name: name, startup: 22, active: 6, recovery: 24, damage: 118,
                         hitstun: 34, blockstun: 20, hitbox: LocalBox(x: 20, y: 70 * s, width: 128, height: 50),
                         knockback: Vec(12, 0), impact: .crushing, knocksDown: true, chip: 0.12,
                         motions: [Motion(from: 1, to: 22, velocity: Vec(3.8, 0))],
-                        armor: 1...24, armorHits: 2)
+                        armor: 1...24, armorHits: 1)
         case .ironFormation:
-            return Move(slot: .special, name: name, startup: 16, active: 6, recovery: 16, damage: 70,
+            return Move(slot: .special, name: name, startup: 16, active: 6, recovery: 18, damage: 62,
                         hitstun: 26, blockstun: 16, hitbox: LocalBox(x: -40, y: 0, width: 150, height: 120),
                         knockback: Vec(9, 4), impact: .heavy, chip: 0.1,
-                        armor: 1...18, armorHits: 1,
-                        selfGrant: (16, ConditionGrant(condition: .fortified, frames: 360, magnitude: 0.3), 0))
+                        armor: 1...12, armorHits: 1,
+                        selfGrant: (16, ConditionGrant(condition: .fortified, frames: 240, magnitude: 0.2), 0))
         case .eyeOfHorus:
-            let orb = ProjectileSpec(kind: .orb, origin: Vec(56, 110 * s), velocity: Vec(5.2, 0), box: LocalBox(x: -24, y: -24, width: 48, height: 48),
-                                     damage: 48, hitstun: 26, blockstun: 16, knockback: Vec(3, 0), lifetime: 170,
+            let orb = ProjectileSpec(kind: .orb, origin: Vec(56, 110 * s), velocity: Vec(6.6, 0), box: LocalBox(x: -24, y: -24, width: 48, height: 48),
+                                     damage: 56, hitstun: 26, blockstun: 16, knockback: Vec(3, 0), lifetime: 170,
                                      onHit: ConditionGrant(condition: .marked, frames: 300, magnitude: 0.25), priority: 2, impact: .medium)
-            return Move(slot: .special, name: name, startup: 16, active: 4, recovery: 22, damage: 0,
+            return Move(slot: .special, name: name, startup: 14, active: 4, recovery: 17, damage: 0,
                         hitstun: 0, blockstun: 0, hitbox: LocalBox(x: 0, y: 0, width: 0, height: 0),
-                        knockback: .zero, impact: .medium, chip: 0.1, projectiles: [(16, orb)])
+                        knockback: .zero, impact: .medium, chip: 0.1, projectiles: [(14, orb)])
         case .levy:
             let rider = ProjectileSpec(kind: .cavalry, origin: Vec(-200, 0), velocity: Vec(13, 0), box: LocalBox(x: -60, y: 0, width: 120, height: 150),
                                        damage: 96, hitstun: 30, blockstun: 18, knockback: Vec(8, 10), lifetime: 110, launches: true,
@@ -235,25 +235,27 @@ public struct MoveSet: Sendable {
                         selfGrant: (28, ConditionGrant(condition: .empowered, frames: 360, magnitude: 0.2), 70))
         case .sunlitVolley:
             let falling = ProjectileSpec(kind: .fallingArrow, origin: Vec(0, 420), velocity: Vec(0, -13), box: LocalBox(x: -26, y: -40, width: 52, height: 80),
-                                         damage: 30, hitstun: 20, blockstun: 12, knockback: Vec(2, 0), lifetime: 60, armingDelay: 0,
+                                         damage: 46, hitstun: 22, blockstun: 12, knockback: Vec(2, 0), lifetime: 60, armingDelay: 0,
                                          targetsEnemy: true, impact: .light)
-            return Move(slot: .special, name: name, startup: 14, active: 4, recovery: 24, damage: 0,
+            return Move(slot: .special, name: name, startup: 12, active: 4, recovery: 18, damage: 0,
                         hitstun: 0, blockstun: 0, hitbox: LocalBox(x: 0, y: 0, width: 0, height: 0),
                         knockback: .zero, impact: .medium, chip: 0.1,
-                        projectiles: [(26, falling), (32, falling), (38, falling)])
+                        projectiles: [(20, falling), (25, falling), (30, falling)])
         case .royalCharge:
-            return Move(slot: .special, name: name, startup: 14, active: 16, recovery: 22, damage: 112,
+            return Move(slot: .special, name: name, startup: 14, active: 16, recovery: 24, damage: 100,
                         hitstun: 34, blockstun: 16, hitbox: LocalBox(x: 10, y: 20, width: 100, height: 130),
                         knockback: Vec(6, 15), impact: .heavy, launches: true, chip: 0.1,
                         motions: [Motion(from: 10, to: 30, velocity: Vec(14, 0))],
                         armor: 6...24, armorHits: 1)
         case .stratagem:
             let seal = ProjectileSpec(kind: .seal, origin: Vec(190, 0), velocity: .zero, box: LocalBox(x: -60, y: 0, width: 120, height: 140),
-                                      damage: 92, hitstun: 30, blockstun: 18, knockback: Vec(4, 14), lifetime: 64, armingDelay: 44,
-                                      launches: true, priority: 3, impact: .heavy)
-            return Move(slot: .special, name: name, startup: 12, active: 4, recovery: 20, damage: 0,
+                                      damage: 76, hitstun: 30, blockstun: 18, knockback: Vec(4, 14), lifetime: 46, armingDelay: 28,
+                                      launches: true, targetsEnemy: true, priority: 3, impact: .heavy)
+            let gust = ProjectileSpec(kind: .wave, origin: Vec(50, 100 * s), velocity: Vec(12, 0), box: LocalBox(x: -18, y: -40, width: 36, height: 80),
+                                      damage: 34, hitstun: 20, blockstun: 16, knockback: Vec(2, 0), lifetime: 60, impact: .light)
+            return Move(slot: .special, name: name, startup: 11, active: 4, recovery: 16, damage: 0,
                         hitstun: 0, blockstun: 0, hitbox: LocalBox(x: 0, y: 0, width: 0, height: 0),
-                        knockback: .zero, impact: .medium, chip: 0.12, projectiles: [(12, seal)])
+                        knockback: .zero, impact: .medium, chip: 0.12, projectiles: [(11, gust), (12, seal)])
         }
     }
 

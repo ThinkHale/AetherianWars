@@ -31,12 +31,17 @@ final class FighterRig: SKNode {
     private var trailPoints: [(tip: CGPoint, base: CGPoint)] = []
     private var weaponShapes: [SKShapeNode] = []
     private var tintables: [(SKShapeNode, UIColor)] = []
+    private var paintedSprites: [SKSpriteNode] = []
+    private var paintedCape: SKSpriteNode?
+    private var paintedSkirt: SKSpriteNode?
+    private(set) var isPainted = false
 
-    init(look: HeroLook, stature: Double) {
+    init(look: HeroLook, stature: Double, parts: PaintedParts? = nil) {
         self.look = look
         self.s = CGFloat(stature)
         super.init()
         build()
+        if let parts { paint(with: parts) }
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) is not used") }
@@ -579,6 +584,102 @@ final class FighterRig: SKNode {
         weaponTip = CGPoint(x: 0, y: -weaponLength)
     }
 
+    // MARK: Painted parts
+
+    /// Swaps the drawn shapes for a hero's painted pieces. Torso and limbs are
+    /// sized to the skeleton so every joint lines up; the head, weapon, cape and
+    /// the rest keep the painting's own proportions.
+    private func paint(with parts: PaintedParts) {
+        isPainted = true
+        // Everything drawn so far, except the effects layers, goes.
+        func strip(_ node: SKNode) {
+            for child in node.children {
+                if child === trail || child === aura { continue }
+                if child is SKShapeNode || child.name == "decor" { child.removeFromParent() } else { strip(child) }
+            }
+        }
+        strip(self)
+
+        let torsoPart = parts["torso"]!
+        // Scale for the free pieces: from the full figure, or failing that the torso.
+        let k: CGFloat = parts.figureHeight > 0
+            ? 180 * s / parts.figureHeight
+            : (torsoLength + 10 * s) / torsoPart.size.height
+
+        func sprite(_ part: PaintedParts.Part, height: CGFloat? = nil, scale: CGFloat? = nil, dim: Bool = false) -> SKSpriteNode {
+            let node = SKSpriteNode(texture: part.texture)
+            let f = height.map { $0 / part.size.height } ?? (scale ?? k)
+            node.size = CGSize(width: part.size.width * f, height: part.size.height * f)
+            node.anchorPoint = part.anchor
+            if dim { node.color = .black; node.colorBlendFactor = 0.32 }
+            node.userData = ["dim": dim ? CGFloat(0.32) : CGFloat(0)]
+            paintedSprites.append(node)
+            return node
+        }
+
+        let torsoSprite = sprite(torsoPart, height: torsoLength + 12 * s)
+        torsoSprite.position = CGPoint(x: 0, y: -5 * s)
+        torso.addChild(torsoSprite)
+
+        let headSprite = sprite(parts["head"]!)
+        headSprite.position = CGPoint(x: -2 * s, y: -headRadius - 8 * s)
+        headSprite.zPosition = 1
+        head.addChild(headSprite)
+        if let hair = parts["backHair"] {
+            let node = sprite(hair)
+            node.position = CGPoint(x: -6 * s, y: 6 * s)
+            node.zPosition = -3
+            head.addChild(node)
+        }
+
+        for (bone, part, length, dim) in [(upperF, "upperArm", upperArm + 9 * s, false), (foreF, "forearm", foreArm + 12 * s, false),
+                                          (upperB, "upperArm", upperArm + 9 * s, true), (foreB, "forearm", foreArm + 12 * s, true),
+                                          (thighF, "thigh", thigh + 9 * s, false), (shinF, "shin", shin + 15 * s, false),
+                                          (thighB, "thigh", thigh + 9 * s, true), (shinB, "shin", shin + 15 * s, true)] {
+            let node = sprite(parts[part]!, height: length, dim: dim)
+            node.position = CGPoint(x: 0, y: 3 * s)
+            node.zPosition = 0.5
+            bone.addChild(node)
+        }
+
+        if let skirt = parts["skirt"] {
+            let node = sprite(skirt)
+            node.position = CGPoint(x: 0, y: 8 * s)
+            node.zPosition = 2
+            body.addChild(node)
+            paintedSkirt = node
+        }
+        if let cape = parts["cape"] {
+            let node = sprite(cape)
+            node.position = CGPoint(x: -6 * s, y: torsoLength - 2 * s)
+            node.zPosition = -9
+            torso.addChild(node)
+            paintedCape = node
+        }
+        if let weaponPart = parts["weapon"] {
+            let node = sprite(weaponPart)
+            // Painted point-up; the rig's weapon points down its arm.
+            node.zRotation = .pi
+            weapon.addChild(node)
+            weaponLength = node.size.height * (1 - weaponPart.anchor.y)
+            weaponTip = CGPoint(x: 0, y: -weaponLength)
+        }
+        if let offhand = parts["offhand"] {
+            let node = sprite(offhand)
+            if look.offhand == .quiver {
+                node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                node.position = CGPoint(x: -12 * s, y: torsoLength * 0.6)
+                node.zRotation = -0.35
+                node.zPosition = -6
+                torso.addChild(node)
+            } else {
+                node.position = CGPoint(x: 4 * s, y: -foreArm + 2 * s)
+                node.zPosition = 14
+                foreB.addChild(node)
+            }
+        }
+    }
+
     // MARK: Posing
 
     /// Applies a pose. `velocity` sways the cape; `energy` lights the aura.
@@ -597,8 +698,18 @@ final class FighterRig: SKNode {
         shinB.zRotation = pose.kneeB
         weapon.zRotation = pose.weapon - (pose.torso + pose.shoulderF + pose.elbowF)
 
-        updateSkirt(pose)
-        if look.cape { updateCape(pose, velocity: velocity) }
+        if isPainted {
+            // A painted skirt swings with the legs; a painted cape trails.
+            paintedSkirt?.zRotation = (pose.hipF + pose.hipB) * 0.22
+            paintedSkirt?.xScale = 1 + min(0.25, abs(pose.hipF - pose.hipB) * 0.12)
+            if let cape = paintedCape {
+                let sway = max(-0.6, min(0.9, -velocity * 0.05 - pose.torso * 0.6)) + sin(CGFloat(CACurrentMediaTime()) * 2.2) * 0.04
+                cape.zRotation = -sway - 0.1
+            }
+        } else {
+            updateSkirt(pose)
+            if look.cape { updateCape(pose, velocity: velocity) }
+        }
 
         aura.alpha = pose.glow * 0.9
         if pose.glow > 0.05 { aura.setScale(1 + 0.04 * sin(CGFloat(CACurrentMediaTime()) * 18)) }
@@ -672,6 +783,14 @@ final class FighterRig: SKNode {
 
     /// Washes every part toward a colour for a moment (a hit, a super).
     func flash(_ color: UIColor, amount: CGFloat) {
+        if isPainted {
+            for node in paintedSprites {
+                // Back limbs keep their shade between flashes.
+                if amount <= 0 { node.color = .black; node.colorBlendFactor = node.userData?["dim"] as? CGFloat ?? 0 }
+                else { node.color = color; node.colorBlendFactor = amount }
+            }
+            return
+        }
         for (node, base) in tintables { node.fillColor = amount <= 0 ? base : base.mixed(with: color, amount) }
     }
 

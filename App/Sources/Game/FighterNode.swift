@@ -25,7 +25,8 @@ final class FighterNode: SKNode {
             sprite = sheets
             rig = nil
         } else {
-            rig = FighterRig(look: look, stature: h.stats.stature)
+            // Painted pieces when the hero has them (never for the mist-made Echo).
+            rig = FighterRig(look: look, stature: h.stats.stature, parts: echo ? nil : PaintedParts.load(hero: hero))
             sprite = nil
         }
         super.init()

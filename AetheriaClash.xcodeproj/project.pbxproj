@@ -74,6 +74,7 @@
 		C3D30AE3B488DB6ADEC2F3F4 /* founding-han.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50E9B0A5D01CA41B799B5F30 /* founding-han.jpg */; };
 		C528AAC805967A3646AA3976 /* FightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C9CAD3FA1B6C6447687E2 /* FightView.swift */; };
 		C6D424A2E4FC557D793C6890 /* mei_lin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1C51F93A9C0D4A3E02B1E4C /* mei_lin.jpg */; };
+		C7FB5154F8C66FC6754BDE2F /* PaintedParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE09A4E54C4E8A7CB26562 /* PaintedParts.swift */; };
 		C9A4A2ACF9B09F7B85FB1DF4 /* HeroLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC951961036880B8F3A8177 /* HeroLook.swift */; };
 		CA9A600F28C53EF14496A1DD /* founding-rome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1413CE0E25A35A7928ABE /* founding-rome.jpg */; };
 		CD6988A457B4EDFB3752678B /* gaius.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9745E4C59EB191AF1140FC7 /* gaius.jpg */; };
@@ -184,6 +185,7 @@
 		CC9201D0DD5064FAB108C229 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		CF49F1603A0A7A0D7B93FE9A /* sfx-crossbow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sfx-crossbow.wav"; sourceTree = "<group>"; };
 		D018E67A0B6B531769B4CB19 /* ControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerInput.swift; sourceTree = "<group>"; };
+		D0FE09A4E54C4E8A7CB26562 /* PaintedParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintedParts.swift; sourceTree = "<group>"; };
 		D1F42A422D6A947B4C0C8AAD /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
 		D2C9A4344DDB69ADD1E37606 /* ui-reward.m4a */ = {isa = PBXFileReference; path = "ui-reward.m4a"; sourceTree = "<group>"; };
 		D633D82BA9C941A7949608A9 /* commanders.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = commanders.jpg; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				5FAFAF46C77B2FFD3C0298D8 /* FightScene.swift */,
 				ACC951961036880B8F3A8177 /* HeroLook.swift */,
 				4F9A41E7E586441C335547E4 /* HUD.swift */,
+				D0FE09A4E54C4E8A7CB26562 /* PaintedParts.swift */,
 				A4AA76BAA3CE5FFAABA78F37 /* Pose.swift */,
 				E16E4847EB5A5187587EEFD7 /* SpriteBody.swift */,
 				06BB24123BAB38C829C83597 /* StageNode.swift */,
@@ -602,6 +605,7 @@
 				C9A4A2ACF9B09F7B85FB1DF4 /* HeroLook.swift in Sources */,
 				A71F66FA5C131F570D4DE0E2 /* InfoViews.swift in Sources */,
 				95055264D47A9A8778162AF2 /* MenuViews.swift in Sources */,
+				C7FB5154F8C66FC6754BDE2F /* PaintedParts.swift in Sources */,
 				FB7643FBBAD079B189616023 /* Pose.swift in Sources */,
 				9589E20F4E206634F6FF4979 /* Profile.swift in Sources */,
 				C070792113F19A872A055605 /* SelectViews.swift in Sources */,

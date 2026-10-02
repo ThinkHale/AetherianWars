@@ -122,7 +122,10 @@ func importFighter(_ hero: String) throws -> Int {
         let cw = p.width / spec.columns, ch = p.height / spec.rows
         if let f = findFrame(p, cellX: 0, cellY: 0, cellW: cw, cellH: ch) { scale = standingHeight / Double(f.maxY - f.minY + 1); break }
     }
-    guard let scale else { print("  \(hero): no idle or reference sheet, skipped"); return 0 }
+    guard let scale else {
+        if !fm.fileExists(atPath: "\(dir)/parts.png") { print("  \(hero): no idle, reference or parts sheet, skipped") }
+        return 0
+    }
 
     var manifest: [String: StripInfo] = [:]
     for (action, spec) in actions.sorted(by: { $0.key < $1.key }) {
@@ -167,6 +170,72 @@ func importFighter(_ hero: String) throws -> Int {
     return manifest.count
 }
 
+// MARK: Parts sheets (cutout animation)
+
+let partNames = ["head", "torso", "upperArm", "forearm", "thigh", "shin", "skirt", "cape", "weapon", "offhand", "backHair", "figure"]
+/// Where the hand holds each hero's weapon, as a share of its height from the grip end.
+let weaponHold: [String: Double] = [
+    "bardiya": 0.32, "atossa": 0.3, "livia": 0.3, "meritamun": 0.34,
+    "tahmina": 0.5, "nefru": 0.5, "zhao_lin": 0.28,
+]
+
+struct PartInfo: Encodable { let width: Int; let height: Int; let anchor: [Double] }
+struct PartsManifest: Encodable { let figureHeight: Int; let parts: [String: PartInfo] }
+
+/// Centre x (in the crop) of the solid pixels in a band of rows.
+func centreX(_ p: Pixels, _ f: Frame, rows: ClosedRange<Int>) -> Double {
+    var sum = 0.0, count = 0.0
+    for y in rows where y >= f.minY && y <= f.maxY {
+        for x in f.minX...f.maxX where p.alpha(x, y) > 24 { sum += Double(x); count += 1 }
+    }
+    return count > 0 ? sum / count - Double(f.minX) : Double(f.maxX - f.minX) / 2
+}
+
+func importParts(_ hero: String) throws -> Bool {
+    guard let p = Pixels(path: "\(inbox)/fighters/\(hero)/parts.png") else { return false }
+    let out = "App/Resources/Fighters"
+    try fm.createDirectory(atPath: out, withIntermediateDirectories: true)
+    let cw = p.width / 4, ch = p.height / 3
+    let sheet = p.cgImage()
+    var parts: [String: PartInfo] = [:]
+    var figureHeight = 0
+    for (index, name) in partNames.enumerated() {
+        guard let f = findFrame(p, cellX: (index % 4) * cw, cellY: (index / 4) * ch, cellW: cw, cellH: ch) else { continue }
+        let w = f.maxX - f.minX + 1, h = f.maxY - f.minY + 1
+        // Ignore specks: a real piece is at least a few percent of its cell.
+        guard w * h > cw * ch / 400 else { continue }
+        if name == "figure" { figureHeight = h; continue }
+        let band = max(2, h / 16)
+        let anchor: [Double]
+        switch name {
+        case "head", "torso":
+            anchor = [centreX(p, f, rows: (f.maxY - band)...f.maxY) / Double(w), 0]
+        case "weapon":
+            let hold = weaponHold[hero] ?? 0.1
+            let row = f.maxY - Int(Double(h) * hold)
+            anchor = [centreX(p, f, rows: (row - band)...(row + band)) / Double(w), hold]
+        case "offhand":
+            anchor = [0.5, 0.5]
+        default:
+            anchor = [centreX(p, f, rows: f.minY...(f.minY + band)) / Double(w), 1]
+        }
+        let crop = sheet.cropping(to: CGRect(x: f.minX, y: f.minY, width: w, height: h))!
+        try writePNG(crop, "\(out)/parts-\(hero)-\(name).png")
+        parts[name] = PartInfo(width: w, height: h, anchor: anchor)
+    }
+    let required = ["head", "torso", "upperArm", "forearm", "thigh", "shin"]
+    guard required.allSatisfy({ parts[$0] != nil }) else {
+        print("  \(hero): parts sheet is missing \(required.filter { parts[$0] == nil }.joined(separator: ", ")); skipped")
+        return false
+    }
+    if figureHeight == 0 { print("  \(hero): no full figure in cell 12; pieces will be sized to the skeleton") }
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+    try encoder.encode(PartsManifest(figureHeight: figureHeight, parts: parts)).write(to: URL(fileURLWithPath: "\(out)/parts-\(hero).json"))
+    print("  \(hero): \(parts.count) painted parts")
+    return true
+}
+
 // MARK: Stages and icon
 
 func resize(_ path: String, to size: CGSize, opaque: Bool, out: String) throws {
@@ -186,7 +255,10 @@ var imported = 0
 print("Fighters:")
 let heroes = (try? fm.contentsOfDirectory(atPath: "\(inbox)/fighters"))?.filter { !$0.hasPrefix(".") }.sorted() ?? []
 if heroes.isEmpty { print("  none in \(inbox)/fighters") }
-for hero in heroes { imported += try importFighter(hero) }
+for hero in heroes {
+    if try importParts(hero) { imported += 1 }
+    imported += try importFighter(hero)
+}
 
 print("Stages:")
 try fm.createDirectory(atPath: "App/Resources/Stages", withIntermediateDirectories: true)
@@ -194,6 +266,11 @@ for stage in ["forum", "nile", "persepolis", "greatWall", "crossing"] {
     for (layer, size, opaque) in [("far", CGSize(width: 2048, height: 1024), true), ("mid", CGSize(width: 2048, height: 1024), false), ("floor", CGSize(width: 2048, height: 256), true)] {
         let source = "\(inbox)/stages/\(stage)-\(layer).png"
         guard fm.fileExists(atPath: source) else { continue }
+        // Keep the painting's own proportions at the target width.
+        var size = size
+        if let image = NSImage(contentsOfFile: source), image.size.width > 0 {
+            size.height = (size.width * image.size.height / image.size.width).rounded()
+        }
         try resize(source, to: size, opaque: opaque, out: "App/Resources/Stages/\(stage)-\(layer).\(opaque ? "jpg" : "png")")
         print("  \(stage)-\(layer)")
         imported += 1

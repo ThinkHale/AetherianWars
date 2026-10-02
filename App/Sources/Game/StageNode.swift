@@ -12,6 +12,12 @@ final class StageNode: SKNode {
     private let ground = SKNode()
     private let front = SKNode()
     private var flames: [SKEmitterNode] = []
+    /// A single painted backdrop is in use (the drawn layers are not).
+    private var painted = false
+
+    /// Share of a painted backdrop's height, from its bottom edge, where the
+    /// fighters' floor is (the brief asks for the floor in the lowest fifth).
+    static let paintedGroundLine: CGFloat = 0.17
 
     /// Width of the playable floor plus margins beyond the walls.
     static let span: CGFloat = 1700
@@ -30,6 +36,11 @@ final class StageNode: SKNode {
 
     /// Moves the background layers for a camera centred on `x`.
     func parallax(cameraX: CGFloat) {
+        if painted {
+            far.position.x = cameraX * 0.82
+            front.position.x = -cameraX * 0.25
+            return
+        }
         sky.position.x = cameraX * 0.92
         far.position.x = cameraX * 0.7
         mid.position.x = cameraX * 0.35
@@ -91,6 +102,26 @@ final class StageNode: SKNode {
     private func build() {
         let p = palette
         let span = Self.span
+
+        // A full painted stage replaces every drawn layer.
+        if let backdrop = ArtLibrary.stageLayer(stage, "far") {
+            painted = true
+            let node = SKSpriteNode(texture: SKTexture(image: backdrop))
+            let width: CGFloat = 1560
+            let height = width * backdrop.size.height / backdrop.size.width
+            node.size = CGSize(width: width, height: height)
+            node.anchorPoint = CGPoint(x: 0.5, y: 0)
+            node.position = CGPoint(x: 0, y: -height * Self.paintedGroundLine)
+            far.addChild(node)
+            // Below the painting, the floor continues in its own colour.
+            let under = SKSpriteNode(color: p.ground.darker(0.5), size: CGSize(width: span * 2.4, height: 400))
+            under.anchorPoint = CGPoint(x: 0.5, y: 1)
+            under.position = CGPoint(x: 0, y: -height * Self.paintedGroundLine + 1)
+            under.zPosition = -1
+            far.addChild(under)
+            buildAtmosphere(p)
+            return
+        }
 
         // Sky.
         let skyNode = SKSpriteNode(texture: gradientTexture(top: p.skyTop, bottom: p.skyBottom))

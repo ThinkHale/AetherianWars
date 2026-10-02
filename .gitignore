@@ -1,0 +1,12 @@
+.DS_Store
+.build/
+.swiftpm/
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj
+node_modules/
+art-inbox/**/*.png
+art-inbox/**/*.jpg
+!art-inbox/README.md

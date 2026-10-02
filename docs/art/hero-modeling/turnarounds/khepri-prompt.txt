@@ -1,0 +1,31 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Kepri — The Scarab of War
+
+**Asset ID:** `khepri` · **Empire:** Egypt · **Class:** rider · **Rarity:** rare
+
+**Canonical appearance:** a wiry Egyptian chariot scout in a linen kilt and leather scale vest, kohl-lined eyes, holding reins of a light chariot at the desert edge.
+
+**Canonical signature / skill:** Scarab Reins / Desert Wind. Speeds allied marches and blinds the enemy vanguard with dust.
+
+**Character anchor:** A chariot-maker's son who mapped every road, well and ambush point in Egypt, Kepri warned the court that a campaign could not be supplied. It collapsed as he said, the rulers blamed others, and he left with scouts, engineers and displaced families to found a refuge where truth could not be overruled by pride.
+
+**Historical status:** An original Aetheria character. His name recalls Khepri, the Egyptian scarab god of the rising sun.
+
+**Existing visual reference:** `src/assets/heroes/khepri.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 23–30; 172 cm; wiry, long-limbed scout, 7.5 heads. Slight forward readiness, narrow torso and low ornament. Chariot silhouette is light and open rather than a massive war wagon.
+
+**Face and hair:** Painting establishes tousled dark short hair, youthful angular face and athletic torso. Keep canonical kohl-lined eyes. Proposed warm medium-brown complexion; expression curious and alert, with a quick glance rather than a ceremonial stare.
+
+**Costume and source reconciliation:** Linen kilt with practical wrap and belt; leather scale vest. Portrait exposes much of the torso beneath a broad decorative shoulder/collar assembly: simplify this into the specified leather vest for the master. Proposed sandals, wrist wraps and small route pouch.
+
+**Palette and surface materials:** Sand linen #D6C49B, leather #7C5636, muted turquoise #448A86 and aged brass #A68A4B in limited accents. Dust follows fabric folds; reins darken at grip points. Avoid priestly costume overlap with Meritamun.
+
+**Weapons, props and mount:** Scarab Reins: leather reins with small carved scarab fittings; fittings must not interfere with handling. Canonical light chariot. Proposed two-horse team, open rear, spoked wheels, shallow platform and bow case; wheel count, team and harness specifics are design decisions.
+
+**3D construction and animation:** Chariot needs separate wheel rotation, axle, reins and horse rigs. Feet must remain inside the platform in turns. Rein loops should be modeled from hand to harness rather than floating. Actions: scan horizon, fast turn, dust-screen pass and route-map consultation.
+
+**Required turnaround details:** Front/back/side scout sheets plus chariot top/side/front views, platform dimensions, rein routing and harness diagram. Name display is Kepri; file/asset ID remains khepri.
+

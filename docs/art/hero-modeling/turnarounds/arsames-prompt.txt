@@ -1,0 +1,31 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Arsamis — The Persian Strategist
+
+**Asset ID:** `arsames` · **Empire:** Persia · **Class:** rider · **Rarity:** epic
+
+**Canonical appearance:** a Persian satrap in a purple and gold riding coat and tall cap, gold torque, astride a Nisaean horse before mountain passes.
+
+**Canonical signature / skill:** Golden Rhyton of Tribute / Satrap's Levy. Calls reinforcements mid-battle, restoring riders to the formation.
+
+**Character anchor:** Forged in the borderlands where Persia, Rome, trade routes and rival kingdoms collided, Arsamis mastered cavalry, diplomacy and supply, and fought beside Rome when Persia's interests aligned with it. Watching villages stripped and prisoners marched while rulers bargained far away, he became one of the four founders, the one who knows yesterday's enemy may be tomorrow's ally.
+
+**Historical status:** The name recalls Arsames, a real Achaemenid noble and grandfather of Darius I. This borderland strategist is Aetheria fiction.
+
+**Existing visual reference:** `src/assets/heroes/arsames.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 38–46; 183 cm; robust cavalry diplomat, 7.5 heads. Tall cap and long riding coat form a vertical silhouette; slightly open posture suggests negotiation rather than rigid command.
+
+**Face and hair:** Painting establishes dark beard, thick brows, olive complexion and a welcoming, knowing smile. Keep cap-mounted hair mostly concealed. Proposed dark brown eyes and a few restrained age lines; individuality comes from expression and beard shape.
+
+**Costume and source reconciliation:** Purple and gold riding coat, tall decorated cap and gold torque. Preserve the portrait’s embroidered borders and layered collar. Proposed split skirt, riding trousers, ankle boots and a practical belt beneath decorative layers.
+
+**Palette and surface materials:** Royal purple #613365, antique gold #BC954B, plum cloth #492C46 and leather #59402C. Silk highlights are broad and soft; embroidery has relief without becoming heavy plate armor. Dust and wear sit low on coat and boots.
+
+**Weapons, props and mount:** Golden Rhyton of Tribute: distinct drinking vessel, proposed animal-ended shape stored in a padded saddle case. Nisaean horse is canonical; dark bay coat and restrained harness are proposed. Optional cavalry spear remains a loadout decision.
+
+**3D construction and animation:** Coat tails must part over saddle; cap requires stable head attachment. Torque rigid around collar. Rhyton has separate hand and storage poses. Actions: reinforcement signal, diplomatic open palm, controlled mounted turn.
+
+**Required turnaround details:** Show cap all sides, coat embroidery map, torque section, rhyton and storage case, mounted silhouette and saddle contact. Display name Arsamis; stable source/asset ID arsames.
+

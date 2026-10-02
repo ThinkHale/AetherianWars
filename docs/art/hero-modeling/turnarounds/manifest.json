@@ -1,0 +1,197 @@
+[
+  {
+    "id": "gaius",
+    "name": "Gaius Aurelius",
+    "selected_file": "gaius-turnaround.png",
+    "prompt_file": "gaius-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "9b971b889c98a9ad21223b3ac7b7df7e5a1ce7a294582d6dafd147fc47212753",
+    "visually_reviewed": true
+  },
+  {
+    "id": "zhao_lin",
+    "name": "Zhao Lin",
+    "selected_file": "zhao_lin-turnaround-v2.png",
+    "prompt_file": "zhao_lin-prompt-v2.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "21de34354b8be348e75b16b1da47583161ef40fbb8cbc67499e3008a3384811d",
+    "visually_reviewed": true
+  },
+  {
+    "id": "tahmina",
+    "name": "Tahmina",
+    "selected_file": "tahmina-turnaround-v2.png",
+    "prompt_file": "tahmina-prompt-v2.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "55f7a7b0160c7e95bf4e6f8312c9eddfdc9e99c12e6de8be250e90a902b048de",
+    "visually_reviewed": true
+  },
+  {
+    "id": "marcus_varro",
+    "name": "Marcus Varro",
+    "selected_file": "marcus_varro-turnaround-v2.png",
+    "prompt_file": "marcus_varro-prompt-v2.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "2b358718702517d7fc16dad424ede89477db7a6b1104ab4bd6eeaa748cb89843",
+    "visually_reviewed": true
+  },
+  {
+    "id": "khepri",
+    "name": "Kepri",
+    "selected_file": "khepri-turnaround.png",
+    "prompt_file": "khepri-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "3ba28440b887e5eeffc6d8c594eb99d783d8da6ff40b8fa07d650017b27d000e",
+    "visually_reviewed": true
+  },
+  {
+    "id": "bardiya",
+    "name": "Bardiya",
+    "selected_file": "bardiya-turnaround.png",
+    "prompt_file": "bardiya-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "73f9a833b02eba9c0684f9c022aacdd3224b8ddff128dc4e8d7eff26a9f069d4",
+    "visually_reviewed": true
+  },
+  {
+    "id": "wei_jian",
+    "name": "Wei Jian",
+    "selected_file": "wei_jian-turnaround.png",
+    "prompt_file": "wei_jian-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "426bfb410f3c73e8bdb8dd58e06d554a695d07c29f6ab78c6f6feddb81b9e842",
+    "visually_reviewed": true
+  },
+  {
+    "id": "meritamun",
+    "name": "Meritamun",
+    "selected_file": "meritamun-turnaround.png",
+    "prompt_file": "meritamun-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "831dab3b189b5cac96fa6c1e3e6e88b6b92ea8d8dda964ef153f9afb1b5405fa",
+    "visually_reviewed": true
+  },
+  {
+    "id": "arsames",
+    "name": "Arsamis",
+    "selected_file": "arsames-turnaround.png",
+    "prompt_file": "arsames-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "cbb11898e82b939bf3a3426403f897880881d37c56d1f6a66c341bf1db35c109",
+    "visually_reviewed": true
+  },
+  {
+    "id": "livia",
+    "name": "Livia Drusilla",
+    "selected_file": "livia-turnaround-v2.png",
+    "prompt_file": "livia-prompt-v2.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "c573c5cdaf09c24ef67b1e3ec7c53e93fed3081670523907a5a0efdc7bda7f0e",
+    "visually_reviewed": true
+  },
+  {
+    "id": "nefru",
+    "name": "Nefru",
+    "selected_file": "nefru-turnaround.png",
+    "prompt_file": "nefru-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "a09e182682f6703dbf2471c0f39307a73ce097088cfd729fd177c49710dff153",
+    "visually_reviewed": true
+  },
+  {
+    "id": "atossa",
+    "name": "Atossa",
+    "selected_file": "atossa-turnaround-v2.png",
+    "prompt_file": "atossa-prompt-v2.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "0f7b2aff005f1f1c7a191d58fa465fdb9560583b7e02212f898451d14c29174f",
+    "visually_reviewed": true
+  },
+  {
+    "id": "mei_lin",
+    "name": "Mei Lin",
+    "selected_file": "mei_lin-turnaround.png",
+    "prompt_file": "mei_lin-prompt.txt",
+    "width": 1536,
+    "height": 1024,
+    "views": [
+      "front",
+      "back",
+      "left side"
+    ],
+    "sha256": "6707b2f482a0c13d587cf67c65387bec7c8d78e8b2b9910e5824f89da75b4dac",
+    "visually_reviewed": true
+  }
+]

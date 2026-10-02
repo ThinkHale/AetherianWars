@@ -1,0 +1,33 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Livia Drusilla — Voice of Rome
+
+**Asset ID:** `livia` · **Empire:** Rome · **Class:** guardian · **Rarity:** legendary
+
+**Canonical appearance:** a Roman noblewoman in a white stola with a golden laurel wreath, composed and commanding.
+
+**Canonical signature / skill:** Laurel of Concord / Imperial Resolve. Shields the weakest ally and strengthens infantry.
+
+**Character anchor:** At the heart of the new imperial household, she has outlasted rivals by seeing three moves ahead and letting others take the credit.
+
+**Historical status:** Livia Drusilla (58 BC to AD 29) was the wife of Augustus and mother of Tiberius. Her counsel in Aetheria and her words here are fiction.
+
+**Existing visual reference:** `src/assets/heroes/founders-atlas.jpg`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 45–55; 169 cm; balanced mature build, 7.5 heads. Quiet upright posture, economical hands and a sweeping draped silhouette. Height and age are artistic selections for a consistent Aetheria depiction.
+
+**Face and hair:** Atlas establishes an oval face, composed dark eyes and intricately arranged dark hair. Preserve that likeness and add subtle maturity rather than a youthful glamour face. Proposed warm light-olive complexion; controlled mouth and direct assessing gaze.
+
+**Costume and source reconciliation:** Catalog requires a white stola and gold laurel; atlas shows red cloak and armor-like upper details. Master design uses white stola with a deep-red palla, golden laurel and restrained brooch. Treat any armored version as a separate explicit variant.
+
+**Palette and surface materials:** Ivory #E6DCC8, Roman red #84302D, muted gold #BA964B, dark hair #30231F. Linen is matte, palla slightly heavier, jewelry polished locally. Cleanly maintained clothing, with minimal battle wear.
+
+**Weapons, props and mount:** Laurel of Concord is the canonical head ornament. Proposed scroll and discreet document case for council poses. Guardian class and Imperial Resolve describe support leadership; a shield or sword is not required by source canon.
+
+**3D construction and animation:** Drapery requires shoulder pins, layered cloth and arm clearance. Laurel is a separate rigid piece; hair is grouped into sculpted braids/coils. Actions: precise counsel, raised protective palm, small authoritative nod.
+
+**Required turnaround details:** Show hairstyle rear construction, wreath closure, stola/palla layering and brooch placement. Include face-neutral orthographics and a council expression sheet; keep drape identical across 2D and 3D.
+
+
+Input reference atlas: use ONLY the top-left Roman woman. Ignore the other three characters. Preserve this specific woman's face and identity.

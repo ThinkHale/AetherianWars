@@ -1,0 +1,31 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Mei Lin — The Archer of a Thousand Plans
+
+**Asset ID:** `mei_lin` · **Empire:** Han · **Class:** archer · **Rarity:** legendary
+
+**Canonical appearance:** a Han court strategist in layered green silk robes with a jade pendant and a folding fan, a map table with bronze tokens before her.
+
+**Canonical signature / skill:** Jade Tally of Command / Thousand Bolt Stratagem. Commands a crossbow barrage that grows stronger each round.
+
+**Character anchor:** A Han scholar's daughter and superb archer whose plans won campaigns against the Xiongnu, Nanyue and Dayuan while generals took the credit. When one presented her greatest plan to the Emperor as his own, she walked away and founded a kingdom of knowledge whose first law is: give credit where the idea was born.
+
+**Historical status:** An original Aetheria character.
+
+**Existing visual reference:** `src/assets/heroes/mei_lin.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 28–36; 166 cm; slender but trained archer, 7.5 heads. Layered green robes create an A-shaped silhouette; fan makes a compact radial accent. Hands and gaze are precise.
+
+**Face and hair:** Painting establishes light warm East Asian complexion, dark almond-shaped eyes, fine brows and black hair in a high structured bun with pins and jade ornaments. Preserve the calm, knowing expression. No unexplained facial scars or heavy battle makeup.
+
+**Costume and source reconciliation:** Layered green silk robes, jade pendant and folding fan are canonical. Preserve white inner collar and darker green outer robe. Proposed tied waist, narrow sleeves beneath wider outer sleeves, trousers under robe and soft boots. Combat variant may shorten sleeves without changing core colors.
+
+**Palette and surface materials:** Jade green #438B79, deep green #24594F, ivory #E3DAC5, warm wood #926A3E and jade #70A78C. Silk sheen is soft; pendant is translucent stone, not emissive. Embroidery stays restrained so the silhouette survives small sprites.
+
+**Weapons, props and mount:** Jade Tally of Command is separate from the pendant unless deliberately unified in a future design. Show tally halves or marked tablet as a proposed solution; exact construction is not canon. Folding fan and map table with bronze tokens are canon appearance cues. Optional personal bow supports her lore, but crossbow barrage is a command skill.
+
+**3D construction and animation:** Fan needs a pivot rig or open/closed meshes; bun is rigid with small ornament motion. Sleeves must clear hands during pointing and archery. Actions: move map token, numbered plan gesture, fan open and barrage command.
+
+**Required turnaround details:** Show bun rear view, robe overlap/closures, fan open/closed, jade pendant versus command tally, and map token scale. Portrait table is a scene prop and should not hide the full-body modeling sheet.
+

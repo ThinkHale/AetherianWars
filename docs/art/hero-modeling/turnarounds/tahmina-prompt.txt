@@ -1,0 +1,30 @@
+undefinedTahmina — The Spirit of the Horse
+
+**Asset ID:** `tahmina` · **Empire:** Persia · **Class:** rider · **Rarity:** common
+
+**Canonical appearance:** a lean Persian horse-archer woman in a quilted riding coat and felt cap, recurve bow in hand, wind-blown dark braid, open grassland behind.
+
+**Canonical signature / skill:** Steppe-Horn Bow / Parting Shot. Wheels away after each strike, loosing an arrow at the pursuer.
+
+**Character anchor:** A master rider and horse-archer who warned that a campaign would kill its horses and then its men. It did, her stallion Rakhsh fell beneath her, and when an official called soldiers replaceable she said 'Then you will replace me' and rode away to found the Kingdom of the Wild Horse.
+
+**Historical status:** An original Aetheria character. Her name, and her stallion Rakhsh's, recall the Shahnameh, a later Persian epic; she is not that figure.
+
+**Existing visual reference:** `src/assets/heroes/tahmina.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 30–38; 171 cm; lean, strong back and thighs, 7.5 heads. Light riding stance with knees relaxed; diagonal braid and bow contrast with the compact felt cap.
+
+**Face and hair:** Portrait establishes a narrow oval face, dark expressive eyes, dark braid and a warm, irreverent smile. Proposed medium olive complexion. Keep hair wind swept, with the main braid as a readable single shape rather than many fine strands.
+
+**Costume and source reconciliation:** Quilted riding coat, felt cap, leather belt, split coat tails and fitted riding trousers. Portrait mixes brown torso panels with olive sleeves; preserve that pattern. Proposed soft riding boots and a hip quiver. Clothing must allow a full mounted torso twist.
+
+**Palette and surface materials:** Olive wool #555A3D, saddle leather #785037, cream linen #D3C4A2, dark hair #29221D. Quilting seams and repeated elbow wear matter more than ornament. Cap is fuzzy felt; coat panels matte and padded.
+
+**Weapons, props and mount:** Steppe-Horn Bow: recurved composite bow with horn belly, wood core and restrained sinew-backed treatment. Proposed replacement riding horse is bay; Rakhsh died in the lore and must not be presented as her living mount. A small worn tack keepsake may be proposed separately.
+
+**3D construction and animation:** Separate braid bones, coat-tail chains and bowstring controls; mounted pose requires hip/knee clearance and shoulder rotation. Build foot and mounted rigs. Signature action is a retreating shot with a visible torso turn; include calm horse-care idle.
+
+**Required turnaround details:** Draw cap off/on, braid back view, coat closures, bow unstrung/strung and riding tack. Mounted front/side/back sheets must preserve the same face, outfit and bow proportions.
+

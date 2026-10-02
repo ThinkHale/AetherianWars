@@ -1,0 +1,33 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Nefru — The Daughter of Kush
+
+**Asset ID:** `nefru` · **Empire:** Egypt · **Class:** archer · **Rarity:** legendary
+
+**Canonical appearance:** an Egyptian royal archer with a golden bow and a blue and gold headdress.
+
+**Canonical signature / skill:** Solar Bow of Ra / Sunlit Volley. Strikes every enemy and improves gathering speed.
+
+**Character anchor:** Born of a Kushite royal line that remembered when Nubian kings ruled Egypt, Nefru refused to be a symbol and became a battlefield commander fiercely protective of the southern peoples. She became one of the four founders because her people deserved rulers who remembered whom power was meant to serve.
+
+**Historical status:** An original Aetheria character.
+
+**Existing visual reference:** `src/assets/heroes/founders-atlas.jpg`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 28–38; 178 cm; athletic royal archer with strong shoulders and back, 7.5 heads. Bow and blue-gold headcloth create two distinctive arcs. Active, grounded stance communicates battlefield command.
+
+**Face and hair:** Atlas establishes deep brown skin, strong cheekbones, dark eyes and black hair beneath a blue-gold headdress. Preserve her Kushite heritage and existing likeness. Expression proud and protective; avoid substituting a generic pale Egyptian royal face.
+
+**Costume and source reconciliation:** Blue-gold headdress and golden bow are canonical. Atlas suggests white linen and a rich broad collar. Proposed battle-ready wrap tunic/skirt with side slit, leather archery bracer, narrow belt and sandals; headdress tails stay short enough to shoot.
+
+**Palette and surface materials:** Lapis blue #244D78, gold #C29B45, white linen #E2D8C0 and leather #65442B. Gold ornament is localized, with matte grip wrap on bow. Cloth has modest road wear; jewelry remains legible rather than uniformly encrusted.
+
+**Weapons, props and mount:** Solar Bow of Ra: gold-faced composite bow with structurally believable limbs and wrapped grip; not a heavy solid-gold bar. Proposed hip quiver and separate arrows. Sunlit Volley can add temporary light VFX; glowing skin and permanent magical eyes are not canon.
+
+**3D construction and animation:** Bowstring controls, arrow sockets and scapula movement are essential. Headdress tails and skirt require controlled secondary motion. Actions: draw/release, broad volley command and protective council stance. Handedness proposed as right-hand draw.
+
+**Required turnaround details:** Front/side/back sheets show full headdress tail lengths, hair exposure, bow grip and bracer. Include full draw pose and bow limb section. Rear clothing and footwear are newly proposed.
+
+
+Input reference atlas: use ONLY the top-right dark-skinned Egyptian/Kushite woman. Ignore the other three characters. Preserve this specific woman's face and identity.

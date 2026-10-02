@@ -1,0 +1,33 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Atossa — The Mother of Persia
+
+**Asset ID:** `atossa` · **Empire:** Persia · **Class:** rider · **Rarity:** legendary
+
+**Canonical appearance:** a Persian queen in riding armour with a jewelled diadem, mounted on a white horse.
+
+**Canonical signature / skill:** Diadem of the Royal Road / Royal Charge. Pierces the rear line and accelerates marches.
+
+**Character anchor:** Daughter of Cyrus the Great, raised in the house that built the Persian Empire, Atossa became a commander who saw the suffering beneath conquest in Egypt, Ionia and Greece. Her soldiers call her the Mother of Persia because she treats villages, soldiers and families as something entrusted to her protection.
+
+**Historical status:** Atossa was a real Achaemenid queen, daughter of Cyrus the Great, wife of Darius I and mother of Xerxes. Aetheria reimagines her as a military commander; her campaigns and words here are fiction.
+
+**Existing visual reference:** `src/assets/heroes/founders-atlas.jpg`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 45–55; 174 cm; strong mature rider, 7.5 heads. Straight-backed but approachable stance. Diadem and cloak frame the head while riding armor keeps the torso compact.
+
+**Face and hair:** Atlas establishes dark eyes, olive skin, black hair under a teal draped head covering and an intent, mature expression. Preserve likeness; proposed fine age lines and tightly controlled hair. Authority comes from attention, not exaggerated scowling.
+
+**Costume and source reconciliation:** Riding armor and jeweled diadem are canonical. Preserve atlas teal head drape and gold scale/embroidered torso. Proposed practical coat over scale armor, split skirt, trousers, boots and a restrained cloak suitable for saddle use.
+
+**Palette and surface materials:** Teal #286D70, antique gold #B18B49, cream #D8C7A5, dark leather #513829. Diadem jewels are small localized accents. Horse is white/very light grey as stated by appearance; keep visible natural shading rather than pure white.
+
+**Weapons, props and mount:** Diadem of the Royal Road is the canonical signature. White mount is canonical. Proposed cavalry spear and sheathed sword support Royal Charge; exact weapons, horse name and tack motifs are not specified. Tack should communicate care rather than excess decoration.
+
+**3D construction and animation:** Separate diadem, head drape, cloak and mount rigs. Cloth should clear reins and shoulder rotation. Actions: mounted charge signal, calming horse touch and attentive council turn. Preserve a readable face when wearing head covering.
+
+**Required turnaround details:** Show diadem front/side/back, jewel arrangement, headcloth folds and riding armor under cloak. Include white horse, saddle, harness routing and mounted leg clearance.
+
+
+Input reference atlas: use ONLY the bottom-right Persian woman wearing teal head covering. Ignore the other three characters. Preserve this specific woman's face and identity.

@@ -1,0 +1,31 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Bardiya — The Fist of Persia
+
+**Asset ID:** `bardiya` · **Empire:** Persia · **Class:** guardian · **Rarity:** rare
+
+**Canonical appearance:** a tall Persian Immortal guardsman in an embroidered robe over scale armour, wicker shield and spear, pomegranate-butt spear, stern bearded face.
+
+**Canonical signature / skill:** Wicker Shield of the Guard / Ten Thousand Stand. Holds the line for one round, taking no more than half damage.
+
+**Character anchor:** A Persian commander who rose through Egypt, the Ionian Revolt and the invasion of Greece believing fear is the foundation of obedience. He broke with Atossa, whom he calls dangerously soft, took veterans, mercenaries and nobles with him, and founded a fortified Persian kingdom built to prove his Persia is the stronger one.
+
+**Historical status:** Bardiya was the name of a real Achaemenid prince, a son of Cyrus the Great. This general, his rival kingdom, and his feud with Atossa are Aetheria fiction.
+
+**Existing visual reference:** `src/assets/heroes/bardiya.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 40–48; 190 cm; tall, heavily built and imposing, 8 heads. Wide stance and still shoulders; long spear creates a straight vertical line, large wicker shield a dominant disk.
+
+**Face and hair:** Portrait shows full dark beard, long dark hair under a wrapped cap, deep-set eyes and a severe expression. Proposed medium olive skin, strong cheek planes and heavy brows. Avoid villain caricature; menace comes from immobility and scrutiny.
+
+**Costume and source reconciliation:** Embroidered Persian robe over scale armor, sleeved underlayer, wrapped headgear and substantial belt. Preserve portrait teal sleeves, patterned panels and round wicker shield. Proposed fitted trousers and ankle boots beneath the robe.
+
+**Palette and surface materials:** Deep teal #285B59, muted crimson #7C3530, antique gold #B08B48, wicker #A18454 and steel scales #686C65. Guard equipment is orderly and well maintained; textiles carry controlled geometric embroidery.
+
+**Weapons, props and mount:** Wicker Shield of the Guard: round woven face with metallic central boss as seen in art, practical rear grip and reinforced rim. Long spear with a pomegranate-shaped butt is canonical. Keep spearhead and butt visually separate and include a transport grip.
+
+**3D construction and animation:** Scale armor rigid over a flexible robe; long beard needs limited bones or sculpted clumps. Spear requires two-hand and one-hand sockets. Shield cannot block his eyes in neutral pose. Actions: unmoving guard, spear plant and controlled formation brace.
+
+**Required turnaround details:** Weapon sheet must show the pomegranate butt, spearhead and full length; shield front/back shows weave and grip. Rear robe view explains embroidery continuity and concealed armor.
+

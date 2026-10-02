@@ -1,0 +1,30 @@
+undefinedMarcus Varro — The Son of Judea
+
+**Asset ID:** `marcus_varro` · **Empire:** Rome · **Class:** rider · **Rarity:** rare
+
+**Canonical appearance:** a confident Roman cavalry prefect in a plumed helmet and scale armour, silvered face mask held at his side, a grey horse behind him.
+
+**Canonical signature / skill:** Silvered Cavalry Mask / Flanking Charge. Strikes the enemy's rear line, dealing bonus damage to archers.
+
+**Character anchor:** Born to a Jewish family in Judea under Roman rule, Marcus entered Roman service through the auxiliaries and earned citizenship and command by courage and discipline. Seeing empire from both the ranks and the streets made him one of the four founders of a kingdom whose army exists to protect its people.
+
+**Historical status:** An original Aetheria character.
+
+**Existing visual reference:** `src/assets/heroes/marcus_varro.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 35–42; 182 cm; athletic cavalry build with broad chest, 7.5 heads. Open shoulders, upright seat and relaxed authority. Helmet plume adds a vertical accent; grey mount supplies a distinct companion silhouette.
+
+**Face and hair:** Existing painting shows dark curly hair, warm brown/olive skin, strong nose, light stubble and an approachable smile. Preserve this individual face; his Judean heritage is a narrative identity, not a reason to exaggerate facial features.
+
+**Costume and source reconciliation:** Catalog calls for scale armor and plumed helmet; portrait instead has a sculpted cuirass and an uncovered head. Use scale armor as the master, preserve red cloak and portrait face, and provide removable helmet. Proposed knee-length tunic, riding trousers and boots with practical straps.
+
+**Palette and surface materials:** Warm bronze scales #9F7842, crimson cloak #8D2C27, leather #503727, pale silver mask #B9BAB2. Grey horse coat #A6A39A with darker mane. Metal is maintained but worked; cloak carries road dust along its hem.
+
+**Weapons, props and mount:** Silvered Cavalry Mask must be a separate wearable/held object, with eye openings and believable strap/helmet connections. Proposed cavalry spear and sheathed sword for Flanking Charge; neither is fixed by the catalog. Grey horse is canonical; tack design is proposed.
+
+**3D construction and animation:** Helmet/mask variants need a consistent head scale, visible face clearance and separate sockets. Mount, reins and rider use independent rigs with synchronized riding animation. Actions: flanking charge, measured council gesture and mask held low at his side.
+
+**Required turnaround details:** Include uncovered head, helmet, masked helmet, mask interior and attachment diagram. Show horse profile and tack; verify mask matches the face without deforming the facial identity.
+

@@ -1,0 +1,31 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Meritamun — The Keeper of Balance
+
+**Asset ID:** `meritamun` · **Empire:** Egypt · **Class:** archer · **Rarity:** epic
+
+**Canonical appearance:** an Egyptian high priestess in white pleated linen and a golden broad collar, a sistrum in one hand, temple columns and incense smoke behind her.
+
+**Canonical signature / skill:** Sistrum of Karnak / Eye of Horus. Marks the strongest enemy; allied archers deal bonus damage to it.
+
+**Character anchor:** A daughter of Ramesses II and Nefertari who rose to High Priestess of Amun and head of a temple wealthier than provinces, Meritamun built one of the most sophisticated armies of her age. When Pharaoh, army, temple and nobles all grasped for more, she took her temple lands out of royal control and founded the Kingdom of Amun's Balance as a counterweight.
+
+**Historical status:** Meritamun was a real daughter of Ramesses II and Nefertari who held titles in the cult of Amun. Her rise to High Priestess, her army, and her Kingdom of Amun's Balance are Aetheria fiction.
+
+**Existing visual reference:** `src/assets/heroes/meritamun.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 35–45; 173 cm; elegant, grounded build, 7.5 heads. Tall column silhouette from long pleated linen; broad collar makes a controlled shoulder arc. Calm symmetry distinguishes her from Nefru’s mobile archery stance.
+
+**Face and hair:** Painting establishes a composed face, pronounced brows, dark eyes and warm brown skin. Preserve canonical priestess identity. Proposed black hair beneath a white linen head covering; controlled gaze, no default smile. Kohl is subtle around the eye rim.
+
+**Costume and source reconciliation:** White pleated linen gown, golden broad collar and white head covering with restrained ceremonial band, matching the painting. Proposed sandals and a narrow waist fastening hidden by drape. A ritual outfit is the primary costume; no unsupported battle armor.
+
+**Palette and surface materials:** Ivory linen #E9DEC8, gold #BD963F, turquoise #3F8D91 and warm red inset #A85B39. Pleats are soft, close spaced and vertical. Collar is rigid segmented jewelry; stone/enamel accents are smoother than cloth.
+
+**Weapons, props and mount:** Sistrum of Karnak: handle, loop frame and separate metal rods/rattles, all visible in a detail drawing. Archer-class leadership does not require replacing her sistrum with a bow. An optional auxiliary bow is a variant proposal only.
+
+**3D construction and animation:** Gown needs leg clearance and cloth simulation or skirt bones; pleats bake into normals except silhouette folds. Collar must avoid neck clipping. Sistrum rods can animate subtly. Actions: marking gesture for Eye of Horus, ritual lift and measured council turn.
+
+**Required turnaround details:** Full-length sheet must show feet and gown hem. Detail collar layers, headdress rear fastening and sistrum parts. Keep incense/background out of the modeling orthographics.
+

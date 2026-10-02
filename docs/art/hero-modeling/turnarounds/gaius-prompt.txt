@@ -1,0 +1,31 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Gaius Aurelius — The Senator's Son
+
+**Asset ID:** `gaius` · **Empire:** Rome · **Class:** guardian · **Rarity:** common
+
+**Canonical appearance:** a weathered Roman legionary in his forties, close-cropped grey hair, a scar across the jaw, battered lorica segmentata and a red scarf.
+
+**Canonical signature / skill:** Scarred Scutum / Shield Wall. Locks shields with the front line, reducing damage to allied guardians.
+
+**Character anchor:** A senator's son handed a commission he had not earned, Gaius trained until he deserved it and rose as the officers above him fell. The higher he climbed, the more clearly he saw what Rome's victories cost the people beneath them.
+
+**Historical status:** An original Aetheria character.
+
+**Existing visual reference:** `src/assets/heroes/gaius.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 45–49; 178 cm; compact, broad shoulders and a thick veteran torso; 7.5 heads tall. Weight carried evenly, chin slightly lowered. Rounded rectangular silhouette: short hair, shoulder plates, broad shield.
+
+**Face and hair:** Angular, deeply lined face; square jaw with the canon jaw scar; grey close crop, clean shave. Warm olive complexion proposed. The existing portrait establishes heavy brow, tired eyes and restrained expression. Sculpt the scar into the skin rather than painting a bright stripe.
+
+**Costume and source reconciliation:** Portrait uses rounded bronze-looking cuirass panels rather than clearly articulated segmentata. For the modeling master, retain the catalog segmentata: overlapping horizontal torso plates, red scarf, short red tunic, leather military belt, sandals and a practical red cloak. Keep the portrait face and scarf; record armor revision explicitly.
+
+**Palette and surface materials:** Iron plates with warm bronze fittings; oxblood cloth #8B2928; dark leather #4B3426; muted steel #73766F. Nicks cluster at shield rim and plate edges; avoid uniform noise. Cloth is matte and faded, metal scratched rather than mirror polished.
+
+**Weapons, props and mount:** Scarred Scutum: curved rectangular shield, central boss and repaired rim, worn red painted field. Short sword in a separate belt sheath; shield in left hand, sword in right as a proposed handedness standard. Shield shape must stay broad enough to read as the defining object.
+
+**3D construction and animation:** Split plates and straps into rigid components; preserve overlap during torso bends. Scarf and cloak get limited secondary motion. Shield requires hand grip plus forearm support. Animate a planted brace, shield wall, guarded advance and a brief thoughtful council idle.
+
+**Required turnaround details:** Front: jaw scar, scarf and shield. Side: shield curvature and armor overlap. Back: cloak attachment, repair stitching and belt. Separate shield front/back, sword/sheath and scarf detail plates.
+

@@ -1,0 +1,147 @@
+{
+  "_doc": "Manual crops for sheets whose layout defeats Tools/split-turnaround.py. Boxes are [left, top, right, bottom] in source pixels; masks are painted with background grey before cropping (title text near a figure).",
+  "arsames": {
+    "front": [
+      215,
+      0,
+      590,
+      725
+    ],
+    "back": [
+      640,
+      0,
+      990,
+      725
+    ],
+    "side": [
+      1105,
+      0,
+      1315,
+      725
+    ],
+    "masks": [
+      [
+        0,
+        0,
+        305,
+        145
+      ]
+    ]
+  },
+  "atossa": {
+    "front": [
+      0,
+      0,
+      425,
+      965
+    ],
+    "back": [
+      450,
+      0,
+      790,
+      965
+    ],
+    "side": [
+      830,
+      0,
+      1090,
+      965
+    ],
+    "masks": [
+      [
+        0,
+        0,
+        162,
+        162
+      ]
+    ]
+  },
+  "livia": {
+    "front": [
+      30,
+      0,
+      400,
+      955
+    ],
+    "back": [
+      420,
+      0,
+      775,
+      955
+    ],
+    "side": [
+      835,
+      0,
+      1060,
+      955
+    ]
+  },
+  "nefru": {
+    "front": [
+      185,
+      0,
+      580,
+      780
+    ],
+    "back": [
+      625,
+      0,
+      1010,
+      780
+    ],
+    "side": [
+      1150,
+      0,
+      1395,
+      780
+    ],
+    "masks": [
+      [
+        0,
+        0,
+        205,
+        372
+      ]
+    ]
+  },
+  "wei_jian": {
+    "front": [
+      120,
+      0,
+      530,
+      775
+    ],
+    "back": [
+      590,
+      0,
+      990,
+      775
+    ],
+    "side": [
+      1120,
+      0,
+      1410,
+      775
+    ]
+  },
+  "bardiya": {
+    "front": [
+      122,
+      0,
+      555,
+      703
+    ],
+    "back": [
+      582,
+      0,
+      1003,
+      703
+    ],
+    "side": [
+      1106,
+      0,
+      1350,
+      703
+    ]
+  }
+}

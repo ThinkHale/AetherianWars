@@ -1,0 +1,32 @@
+Use case: stylized-concept. Create ONE high-resolution landscape full-body character modeling turnaround sheet for Aetheria Clash, using the supplied portrait ONLY as face/hair/identity reference, and the written profile for costume corrections. Exactly THREE equally spaced full-body views left to right: FRONT, BACK, LEFT SIDE PROFILE facing left. Same individual, identical outfit, scale and aligned top-of-head and soles across all three. Neutral relaxed A-pose, arms slightly apart, empty open hands; show fingers and boots/sandals fully. True orthographic appearance, no three-quarter substitutes. Detailed realistic game-character concept rendering, clear construction, soft flat studio illumination, neutral light grey background, no scenery, no mounts, no chariot, no dramatic shadows. Costume layers, closures and backs must remain mechanically consistent across views. Any weapon/shield/hand prop is shown SEPARATELY in a small bottom strip so it never hides torso or legs; worn sheathed equipment may remain attached. Label the three views accurately, restrained small typography. Frame generous margins, no head or foot cropping. This is a production reference for creating playable models, not a posed illustration. Follow this profile:
+Wei Jian — The Survivor of the Han
+
+**Asset ID:** `wei_jian` · **Empire:** Han · **Class:** guardian · **Rarity:** epic
+
+**Canonical appearance:** a Han general in red-lacquered lamellar armour, long black beard, holding a jian sword and command seal.
+
+**Canonical signature / skill:** Red General's Seal / Iron Formation. Absorbs a heavy blow and rallies the front line.
+
+**Character anchor:** The only child to survive a Han raid on his frontier village, Wei Jian was raised inside the very army that destroyed it and rose to general by winning before the first sword was drawn. Every burned village reminded him of his own, until he left the Han and became one of the four founders of a kingdom that protects families from empires.
+
+**Historical status:** An original Aetheria character.
+
+**Existing visual reference:** `src/assets/heroes/founders-atlas.jpg`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 40–48; 181 cm; sturdy, broad-shouldered general, 7.5 heads. Strong triangular upper silhouette, straight planted legs and restrained gestures. Red lamellar armor should separate him instantly from Zhao Lin.
+
+**Face and hair:** Canonical long black beard conflicts with atlas art, which shows a shorter moustache/beard. Retain the atlas facial structure and add a clearly long, controlled beard in the modeling master. Proposed medium East Asian complexion, dark eyes, black hair tied under a command headpiece.
+
+**Costume and source reconciliation:** Red-lacquered lamellar cuirass, broad shoulder defenses, layered skirt and dark under-robe. Proposed cloth sash, fitted trousers and boots. Keep ornament sparse: his authority comes from discipline and survival, not imperial luxury.
+
+**Palette and surface materials:** Dark red lacquer #852D29, charcoal cloth #303333, muted gold hardware #A68B58 and leather #47352C. Lacquer edges show chips; avoid making the whole armor shiny plastic. Beard remains nearly black with restrained highlights.
+
+**Weapons, props and mount:** Jian sword and command seal are canonical. Red General’s Seal should be a compact red seal in a protective case or pouch, shown in a separate detail plate. Jian is straight and double edged; define a simple guard and matching scabbard.
+
+**3D construction and animation:** Beard bones must clear collar and sword arm; armor skirt opens around hips. Seal is a removable hand prop. Actions: Iron Formation brace, short precise sword command, rally gesture and still reflective idle.
+
+**Required turnaround details:** Show long beard front/side/back, seal face/handle/case, jian and scabbard. Atlas quarter is a likeness reference, not a full-body blueprint; lower body is proposed.
+
+ Reference atlas: use ONLY bottom-left male Han general; other three people are unrelated.

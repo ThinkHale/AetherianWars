@@ -1,0 +1,30 @@
+undefinedZhao Lin — The Last Loyalist
+
+**Asset ID:** `zhao_lin` · **Empire:** Han · **Class:** archer · **Rarity:** common
+
+**Canonical appearance:** a young Han crossbowman in lacquered leather armour, topknot tied with a red cord, a bronze-trigger crossbow across the shoulder, watchtower behind.
+
+**Canonical signature / skill:** Bronze Trigger of Juyan / Repeating Bolts. Looses a rapid volley that strikes the two nearest enemies.
+
+**Character anchor:** Born to a family that had served the Han for generations, Zhao Lin gave the dynasty everything until the Xiongnu wars, Nanyue and Dayuan showed him families paying for decisions made far away. He refused the title of Emperor and founded a reformed Han realm as its Guardian-King.
+
+**Historical status:** An original Aetheria character.
+
+**Existing visual reference:** `src/assets/heroes/zhao_lin.webp`.
+
+### Proposed production design
+
+**Body, age and silhouette:** 25–30; 175 cm; lean athletic build; 7.5 heads. Upright, precisely squared stance, narrow waist and clean vertical silhouette. Keep him visually young despite the senior responsibility in his story.
+
+**Face and hair:** East Asian facial features based on the painted portrait; straight brows, alert dark eyes, smooth jaw and clean shave. Black hair in a high topknot tied with the required red cord. Controlled, serious expression; avoid adding age lines to communicate authority.
+
+**Costume and source reconciliation:** Catalog specifies lacquered leather armor; portrait reads as red plated/lamellar armor and includes a bow and quivers. Model a red lacquered leather lamellar interpretation and replace the portrait bow loadout with the canonical bronze-trigger crossbow. Short side-split tunic, wrapped trousers and practical boots complete the proposed lower half.
+
+**Palette and surface materials:** Red lacquer #963B30, deep brown leather #49352B, flax cloth #C9B890, patinated bronze #8F7950, black hair #211D1A. Distinguish supple leather slats from hard bronze hardware; modest frontier wear.
+
+**Weapons, props and mount:** Bronze Trigger of Juyan is the focal mechanism of his crossbow: wood stock, transverse bow, visible string and separate trigger housing. Proposed bolt case at hip. Repeating Bolts is gameplay behavior; a specific repeating mechanism is not defined in canon and needs design approval before engineering.
+
+**3D construction and animation:** Rigid crossbow rig with bowstring controls, hand sockets and bolt visibility. Keep finger clearance around trigger. Lamellar skirt deforms over thighs without clipping. Actions: measured aiming, rapid volley, inspection of supplies and formal salute.
+
+**Required turnaround details:** Front/back/side views must show topknot cord and armor closures; weapon orthographics must expose trigger, string path and bolt channel. Show an armed pose and a neutral unarmed pose.
+

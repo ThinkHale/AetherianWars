@@ -31,7 +31,7 @@ struct CharacterSelectView: View {
                 ScreenHeader(title: purpose.title, subtitle: prompt) {
                     if picks.isEmpty { model.go(.menu) } else { picks.removeLast(); alts.removeLast() }
                 }
-                HStack(alignment: .top, spacing: 16) {
+                HStack(alignment: compact ? .top : .center, spacing: 16) {
                     preview
                     grid
                 }
@@ -41,6 +41,7 @@ struct CharacterSelectView: View {
                         .font(.footnote).foregroundStyle(.orange)
                 }
             }
+            .frame(maxWidth: 1200)
             .padding(.horizontal, 24)
             .padding(.vertical, compact ? 6 : 12)
         }
@@ -52,7 +53,7 @@ struct CharacterSelectView: View {
         let record = store.profile.record(highlighted)
         return HStack(spacing: 0) {
             PortraitView(hero: highlighted, echo: false)
-                .frame(width: 150)
+                .frame(width: compact ? 150 : 210)
                 .overlay(alignment: .bottomLeading) {
                     if store.profile.hasAltPalette(highlighted) {
                         Image(systemName: "seal.fill").foregroundStyle(Theme.gold).padding(6).accessibilityLabel("Arcade cleared")
@@ -87,7 +88,7 @@ struct CharacterSelectView: View {
             }
             .padding(14)
         }
-        .frame(maxWidth: 470, maxHeight: .infinity)
+        .frame(maxWidth: compact ? 470 : 560, maxHeight: compact ? .infinity : 600)
         .clipShape(RoundedRectangle(cornerRadius: 14))
         .panel()
     }
@@ -128,7 +129,7 @@ struct CharacterSelectView: View {
             }
         } label: {
             PortraitView(hero: id)
-                .frame(width: compact ? 54 : 66, height: compact ? 62 : 82)
+                .frame(width: compact ? 54 : 92, height: compact ? 62 : 114)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(selected ? Theme.gold : .white.opacity(0.15), lineWidth: selected ? 3 : 1))
                 .overlay(alignment: .topTrailing) {
@@ -243,6 +244,7 @@ struct StageSelectView: View {
                 }
                 .padding(.bottom, 8)
             }
+            .frame(maxWidth: 1200)
             .padding(.horizontal, 24)
             .padding(.vertical, 12)
         }

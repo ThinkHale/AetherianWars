@@ -161,6 +161,27 @@ final class AppModel: ObservableObject {
         case "hall": screen = .hall
         case "select": screen = .select(.versusCPU)
         case "settings": screen = .settings
+        case "hero" where parts.count >= 2:
+            if let hero = HeroID(rawValue: parts[1]) { screen = .hero(hero) }
+        case "ladder":
+            let hero = parts.count >= 2 ? HeroID(rawValue: parts[1]) ?? .gaius : .gaius
+            store.profile.arcadeInProgress = ArcadeRun(player: hero, difficulty: .soldier, seed: 42, rung: parts.count >= 3 ? Int(parts[2]) ?? 0 : 0,
+                                                       score: 48_250, continuesUsed: 0, altPalette: false)
+            screen = .ladder
+        case "ending" where parts.count >= 2:
+            if let hero = HeroID(rawValue: parts[1]) { screen = .ending(hero, score: 412_900, newBest: true) }
+        case "versus" where parts.count >= 3:
+            if let a = HeroID(rawValue: parts[1]), let b = HeroID(rawValue: parts[2]) {
+                let config = MatchConfig(heroes: [a, b], stage: StageID.home(of: b.hero.empire), seed: 3)
+                screen = .versus(FightSetup(match: config, mode: .versusCPU, cpu: .soldier))
+            }
+        case "results" where parts.count >= 3:
+            if let a = HeroID(rawValue: parts[1]), let b = HeroID(rawValue: parts[2]) {
+                let config = MatchConfig(heroes: [a, b], stage: StageID.home(of: a.hero.empire), seed: 3)
+                var stats = FightStats(); stats.damageDealt = 1840; stats.hitsLanded = 42; stats.bestCombo = 7; stats.blocks = 11; stats.throwsLanded = 2; stats.supersUsed = 1; stats.perfectRounds = 1
+                screen = .results(FightResult(setup: FightSetup(match: config, mode: .versusCPU, cpu: .soldier), winner: 0, stats: [stats, FightStats()],
+                                              healthLeft: [0.62, 0], secondsLeft: 41, rounds: [2, 0]))
+            }
         case "fight" where parts.count >= 4:
             if let a = HeroID(rawValue: parts[1]), let b = HeroID(rawValue: parts[2]), let stage = StageID(rawValue: parts[3]) {
                 let config = MatchConfig(heroes: [a, b], stage: stage, roundsToWin: 2, roundSeconds: 99, seed: 7, bosses: parts.count > 4 && parts[4] == "boss" ? [1] : [])

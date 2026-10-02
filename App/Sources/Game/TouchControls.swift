@@ -34,7 +34,8 @@ final class TouchControls: SKNode {
         self.size = size
         self.safe = safe
         self.swap = swap
-        self.scale = scale
+        // Thumbs are the same size on an iPad; buttons grow only a little.
+        self.scale = scale * max(1, min(1.25, size.height / 500))
         self.restAlpha = opacity
         super.init()
         zPosition = 1100

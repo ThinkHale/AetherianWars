@@ -53,6 +53,7 @@ final class AudioManager {
     private var fadingOut: AVAudioPlayer?
     private(set) var currentTrack: MusicTrack?
     private var started = false
+    private let sessionQueue = DispatchQueue(label: "aetheria.audio.session", qos: .userInitiated)
 
     var musicVolume: Float = 0.7 { didSet { music?.volume = musicVolume * 0.6 } }
     var effectsVolume: Float = 0.9 { didSet { engine.mainMixerNode.outputVolume = effectsVolume } }
@@ -62,8 +63,11 @@ final class AudioManager {
     func start() {
         guard !started else { return }
         started = true
-        try? AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [.mixWithOthers])
-        try? AVAudioSession.sharedInstance().setActive(true)
+        // Session calls can block; keep them off the main thread.
+        sessionQueue.async {
+            try? AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [.mixWithOthers])
+            try? AVAudioSession.sharedInstance().setActive(true)
+        }
         let format = AVAudioFormat(standardFormatWithSampleRate: 44_100, channels: 2)!
         for _ in 0..<12 {
             let voice = AVAudioPlayerNode()
@@ -92,9 +96,13 @@ final class AudioManager {
     }
 
     func resume() {
-        try? AVAudioSession.sharedInstance().setActive(true)
-        startEngine()
-        music?.play()
+        sessionQueue.async { [weak self] in
+            try? AVAudioSession.sharedInstance().setActive(true)
+            DispatchQueue.main.async { [weak self] in
+                self?.startEngine()
+                self?.music?.play()
+            }
+        }
     }
 
     /// Reads a bundled sound (WAV or AAC) into a buffer in the engine's format.

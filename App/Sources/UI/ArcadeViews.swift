@@ -42,6 +42,7 @@ struct LadderView: View {
                         .buttonStyle(GameButtonStyle(prominent: true))
                     }
                 }
+                .frame(maxWidth: 1200)
                 .padding(.horizontal, 24)
                 .padding(.vertical, 12)
             } else {
@@ -106,9 +107,10 @@ struct VersusView: View {
                 .scaleEffect(shown ? 1 : 3)
                 .opacity(shown ? 1 : 0)
             VStack {
-                Spacer()
                 Text(setup.match.stage.name.uppercased()).font(Theme.heading(14)).tracking(3).foregroundStyle(Theme.parchment)
-                    .padding(.bottom, 14)
+                    .shadow(color: .black, radius: 4)
+                    .padding(.top, 14)
+                Spacer()
             }
         }
         .contentShape(Rectangle())
@@ -133,6 +135,7 @@ struct VersusView: View {
         return ZStack(alignment: leading ? .bottomLeading : .bottomTrailing) {
             PortraitView(hero: id, echo: echo)
                 .mask(LinearGradient(colors: [.black, .black, .clear], startPoint: leading ? .leading : .trailing, endPoint: leading ? .trailing : .leading))
+                .overlay(LinearGradient(colors: [.clear, .clear, .black.opacity(0.85)], startPoint: .top, endPoint: .bottom))
             VStack(alignment: leading ? .leading : .trailing, spacing: 4) {
                 Text(echo ? "ECHO OF \(hero.name.uppercased())" : hero.name.uppercased()).font(Theme.display(26)).foregroundStyle(.white)
                 Text(echo ? "The Crossing, wearing a familiar face" : hero.title).font(Theme.lore(17)).foregroundStyle(Theme.gold)
@@ -231,7 +234,7 @@ struct ResultsView: View {
                     model.beginFight(setup)
                 }
                 .buttonStyle(GameButtonStyle(prominent: true))
-                Button("New Fighters") { playTap(); model.go(.select(purpose)) }.buttonStyle(GameButtonStyle())
+                Button("Fighters") { playTap(); model.go(.select(purpose)) }.buttonStyle(GameButtonStyle())
                 Button("Menu") { playTap(); model.go(.menu) }.buttonStyle(GameButtonStyle())
             }
         }
@@ -269,12 +272,12 @@ struct EndingView: View {
                     Text(h.name.uppercased()).font(Theme.display(36)).foregroundStyle(Theme.gold)
                     ScrollView {
                         Text(Endings.text(for: hero))
-                            .font(Theme.lore(19))
+                            .font(Theme.lore(17))
                             .foregroundStyle(.white.opacity(0.92))
                             .opacity(revealed ? 1 : 0)
                             .animation(.easeIn(duration: 2), value: revealed)
                     }
-                    .frame(maxHeight: 170)
+                    .frame(maxHeight: 210)
                     HStack {
                         Text("FINAL SCORE \(score.formatted())").font(Theme.heading(16)).foregroundStyle(Theme.gold)
                         if newBest { Text("NEW BEST").font(Theme.heading(11)).padding(4).background(Theme.crimson).clipShape(RoundedRectangle(cornerRadius: 4)) }

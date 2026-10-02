@@ -38,6 +38,8 @@ public struct FightStats: Equatable, Codable, Sendable {
     public var specialsUsed = 0
     public var supersUsed = 0
     public var perfectRounds = 0
+
+    public init() {}
 }
 
 public struct Fighter: Sendable {

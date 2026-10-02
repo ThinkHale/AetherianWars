@@ -1,3 +1,3 @@
 Stage paintings land here from `swift Tools/import-art.swift`
-(see docs/chatgpt-art-brief.md). A hero with no strips is drawn by the
-vector rig in App/Sources/Game/FighterRig.swift.
+(see docs/chatgpt-art-brief.md). A stage without paintings is drawn in code
+by App/Sources/Game/StageNode.swift.

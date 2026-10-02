@@ -36,6 +36,7 @@ struct HallOfHeroesView: View {
                     .padding(.bottom, 20)
                 }
             }
+            .frame(maxWidth: 1200)
             .padding(.horizontal, 24)
             .padding(.top, 12)
         }
@@ -97,6 +98,7 @@ struct HeroDetailView: View {
                     }
                 }
             }
+            .frame(maxWidth: 1200)
             .padding(.horizontal, 24)
             .padding(.top, 12)
         }
@@ -151,7 +153,7 @@ struct SettingsView: View {
                             slider("Size", value: $store.profile.settings.controlsScale, range: 0.8...1.3)
                             slider("Opacity", value: $store.profile.settings.controlsOpacity, range: 0.35...1)
                             section("PROGRESS")
-                            Text("\(store.profile.matchesPlayed) fights · high score \(store.profile.highScore.formatted())")
+                            Text("\(store.profile.matchesPlayed) \(store.profile.matchesPlayed == 1 ? "fight" : "fights") · high score \(store.profile.highScore.formatted())")
                                 .font(Theme.lore(15)).foregroundStyle(.white.opacity(0.75))
                             Button("Reset progress") { confirmReset = true }.buttonStyle(GameButtonStyle())
                             section("ABOUT")
@@ -166,6 +168,7 @@ struct SettingsView: View {
                     .padding(.bottom, 20)
                 }
             }
+            .frame(maxWidth: 1200)
             .padding(.horizontal, 24)
             .padding(.top, 12)
         }
@@ -251,6 +254,7 @@ struct HowToPlayView: View {
                     .buttonStyle(GameButtonStyle(prominent: true))
                 }
             }
+            .frame(maxWidth: 1200)
             .padding(.horizontal, 24)
             .padding(.vertical, 12)
         }

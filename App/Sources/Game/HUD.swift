@@ -83,19 +83,24 @@ final class HUDNode: SKNode {
         return SKTexture(image: image)
     }()
 
+    /// Larger on iPad, so the bars keep their presence on a big screen.
+    private var uiScale: CGFloat { max(1, min(1.6, size.height / 420)) }
+
     func layout(size: CGSize) {
         self.size = size
+        let k = uiScale
+        for node in bars as [SKNode] + [timerPlate, banner] + comboLabels { node.setScale(k) }
         if let shade = childNode(withName: "shade") as? SKSpriteNode {
             shade.size = CGSize(width: size.width + 40, height: 150)
             shade.position = CGPoint(x: 0, y: size.height / 2 - 75)
         }
-        let top = size.height / 2 - max(safe.top, 10) - 34
-        let edge = size.width / 2 - max(safe.left, safe.right, 16) - 8
+        let top = size.height / 2 - max(safe.top, 10) - 34 * k
+        let edge = size.width / 2 - max(safe.left, safe.right, 16) - 8 * k
         bars[0].position = CGPoint(x: -edge, y: top)
         bars[1].position = CGPoint(x: edge, y: top)
         timerPlate.position = CGPoint(x: 0, y: top - 2)
-        comboLabels[0].position = CGPoint(x: -edge + 6, y: top - 100)
-        comboLabels[1].position = CGPoint(x: edge - 6, y: top - 100)
+        comboLabels[0].position = CGPoint(x: -edge + 6, y: top - 100 * k)
+        comboLabels[1].position = CGPoint(x: edge - 6, y: top - 100 * k)
         banner.position = CGPoint(x: 0, y: 40)
     }
 

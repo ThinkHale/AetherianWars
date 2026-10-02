@@ -462,7 +462,8 @@ final class FightScene: SKScene {
         let separation = CGFloat(abs(a.x - b.x))
         let midX = CGFloat(a.x + b.x) / 2
         // Fit both fighters with room to spare; show at least ~430 units of height.
-        let visibleWidth = max(640, separation + 300)
+        // Wider screens see more of the stage; taller ones (iPad) more sky.
+        let visibleWidth = max(size.width / size.height > 1.6 ? 640 : 780, separation + 300)
         var scale = min(size.width / visibleWidth, size.height / 430)
         scale *= zoom
         zoom += (1 - zoom) * 0.04

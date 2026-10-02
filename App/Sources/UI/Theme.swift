@@ -60,9 +60,9 @@ struct GameButtonStyle: ButtonStyle {
             .font(Theme.heading(prominent ? 20 : 16))
             .tracking(1.5)
             .foregroundStyle(prominent ? Theme.ink : Theme.gold)
-            .padding(.horizontal, 22)
+            .padding(.horizontal, 18)
             .padding(.vertical, prominent ? 13 : 10)
-            .frame(minWidth: 180)
+            .frame(minWidth: 130)
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(prominent ? AnyShapeStyle(LinearGradient(colors: [Color(red: 0.96, green: 0.82, blue: 0.45), Theme.goldDim], startPoint: .top, endPoint: .bottom)) : AnyShapeStyle(Theme.panel))

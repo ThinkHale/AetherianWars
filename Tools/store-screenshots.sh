@@ -23,7 +23,7 @@ IPAD=$(device "Clash iPad Pro 13" com.apple.CoreSimulator.SimDeviceType.iPad-Pro
 xcodebuild -project AetheriaClash.xcodeproj -scheme AetheriaClash -destination "id=$IPHONE" -derivedDataPath build/Screens build -quiet
 
 # name|route|seconds to wait
-SHOTS="01-fight|fight:livia:bardiya:forum:demo|9
+SHOTS="${SHOTS_ONLY:-}01-fight|fight:livia:bardiya:forum:demo|9
 02-select|select|4
 03-versus|versus:bardiya:atossa|2
 04-fight-nile|fight:nefru:khepri:nile:demo|11

@@ -101,6 +101,8 @@ final class StageNode: SKNode {
         sun.color = p.sun; sun.colorBlendFactor = 1; sun.blendMode = .add
         sun.size = CGSize(width: 320, height: 320)
         sun.position = CGPoint(x: stage == .greatWall ? 260 : -180, y: stage == .crossing ? 420 : 150)
+        // In the Crossing the beacon is the light; the sky only glows faintly.
+        if stage == .crossing { sun.alpha = 0.35; sun.position = CGPoint(x: 0, y: 520) }
         sky.addChild(sun)
         let disc = SKShapeNode(circleOfRadius: stage == .crossing ? 0 : 34)
         disc.fillColor = p.sun; disc.strokeColor = .clear; disc.position = sun.position

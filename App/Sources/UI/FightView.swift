@@ -17,9 +17,8 @@ struct FightView: View {
         GeometryReader { geo in
             ZStack {
                 if let scene {
-                    SpriteSceneView(scene: scene)
+                    SpriteSceneView(scene: scene, label: "Fight between \(setup.match.heroes[0].hero.name) and \(setup.match.heroes[1].hero.name)")
                         .ignoresSafeArea()
-                        .accessibilityLabel("Fight between \(setup.match.heroes[0].hero.name) and \(setup.match.heroes[1].hero.name)")
                 }
                 if paused { pauseMenu.transition(.opacity) }
             }
@@ -99,6 +98,7 @@ struct FightView: View {
 /// The SKView bridge. Keeps the scene running at 60 fps.
 struct SpriteSceneView: UIViewRepresentable {
     let scene: SKScene
+    var label = ""
 
     func makeUIView(context: Context) -> SKView {
         let view = SKView()
@@ -106,6 +106,11 @@ struct SpriteSceneView: UIViewRepresentable {
         view.ignoresSiblingOrder = false
         view.isMultipleTouchEnabled = true
         view.shouldCullNonVisibleNodes = true
+        // One accessibility element whose value reports both fighters' health.
+        view.isAccessibilityElement = true
+        view.accessibilityIdentifier = "fight"
+        view.accessibilityLabel = label
+        view.accessibilityTraits = [.allowsDirectInteraction, .updatesFrequently]
         #if DEBUG
         view.showsFPS = ProcessInfo.processInfo.arguments.contains("-showFPS")
         view.showsNodeCount = ProcessInfo.processInfo.arguments.contains("-showFPS")

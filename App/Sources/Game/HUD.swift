@@ -262,6 +262,13 @@ private final class SideBar: SKNode {
             crop.addChild(sprite)
         }
         node.addChild(crop)
+        if echo {
+            let mist = SKShapeNode(circleOfRadius: radius)
+            mist.fillColor = UIColor(hex: 0x6F86A8, alpha: 0.55)
+            mist.strokeColor = .clear
+            mist.blendMode = .alpha
+            node.addChild(mist)
+        }
         let ring = SKShapeNode(circleOfRadius: radius)
         ring.strokeColor = Theme.goldUI
         ring.lineWidth = 2.5

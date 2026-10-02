@@ -102,7 +102,7 @@ final class AppModel: ObservableObject {
         let heroes = result.setup.match.heroes
         let playerWon = result.winner == 0
         profile.matchesPlayed += 1
-        profile.totalKOs += result.stats[0].hitsLanded > 0 && playerWon ? result.rounds[0] : 0
+        profile.totalKOs += result.rounds[0]
         if result.setup.mode != .training {
             profile.update(heroes[0]) { playerWon ? ($0.wins += 1) : ($0.losses += 1) }
             if result.setup.mode == .versusLocal {
@@ -161,6 +161,12 @@ final class AppModel: ObservableObject {
         case "hall": screen = .hall
         case "select": screen = .select(.versusCPU)
         case "settings": screen = .settings
+        case "spar" where parts.count >= 4:
+            // A fight against an opponent who does nothing (UI tests).
+            if let a = HeroID(rawValue: parts[1]), let b = HeroID(rawValue: parts[2]), let stage = StageID(rawValue: parts[3]) {
+                let config = MatchConfig(heroes: [a, b], stage: stage, roundsToWin: 2, roundSeconds: 99, seed: 7)
+                screen = .fight(FightSetup(match: config, mode: .versusCPU, cpu: nil))
+            }
         case "hero" where parts.count >= 2:
             if let hero = HeroID(rawValue: parts[1]) { screen = .hero(hero) }
         case "ladder":
@@ -184,7 +190,7 @@ final class AppModel: ObservableObject {
             }
         case "fight" where parts.count >= 4:
             if let a = HeroID(rawValue: parts[1]), let b = HeroID(rawValue: parts[2]), let stage = StageID(rawValue: parts[3]) {
-                let config = MatchConfig(heroes: [a, b], stage: stage, roundsToWin: 2, roundSeconds: 99, seed: 7, bosses: parts.count > 4 && parts[4] == "boss" ? [1] : [])
+                let config = MatchConfig(heroes: [a, b], stage: stage, roundsToWin: 2, roundSeconds: 99, seed: 7, bosses: parts.contains("boss") ? [1] : [])
                 var setup = FightSetup(match: config, mode: .versusCPU, cpu: .champion)
                 setup.demo = parts.contains("demo")
                 screen = .fight(setup)

@@ -49,6 +49,28 @@ final class AetheriaClashUITests: XCTestCase {
         snapshot(app, "06-fight")
     }
 
+    /// Drags the stick toward an idle opponent and taps Light: they take damage.
+    func testTouchControlsLandBlows() {
+        let app = XCUIApplication()
+        app.launchEnvironment["AETHERIA_START"] = "spar:marcus_varro:gaius:forum"
+        app.launch()
+        let fight = app.otherElements["fight"]
+        XCTAssertTrue(fight.waitForExistence(timeout: 10))
+        sleep(4) // round intro
+        let window = app.windows.firstMatch
+        // Hold the stick to the right for a second and a half.
+        let start = window.coordinate(withNormalizedOffset: CGVector(dx: 0.15, dy: 0.75))
+        let right = window.coordinate(withNormalizedOffset: CGVector(dx: 0.28, dy: 0.75))
+        start.press(forDuration: 0.05, thenDragTo: right, withVelocity: .fast, thenHoldForDuration: 1.6)
+        // Light sits low on the right.
+        let light = window.coordinate(withNormalizedOffset: CGVector(dx: 0.83, dy: 0.86))
+        for _ in 0..<8 { light.tap() }
+        sleep(1)
+        let value = (fight.value as? String) ?? ""
+        snapshot(app, "09-touch")
+        XCTAssertTrue(value.contains("Gaius Aurelius") && !value.contains("Gaius Aurelius 100 percent"), "opponent took no damage: \(value)")
+    }
+
     func testFightRunsAndPauses() {
         let app = XCUIApplication()
         app.launchEnvironment["AETHERIA_START"] = "fight:livia:bardiya:forum"

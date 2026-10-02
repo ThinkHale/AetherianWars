@@ -375,7 +375,7 @@ final class FightScene: SKScene {
     private func f(_ i: Int) -> Fighter { match.fighters[i] }
 
     private func addShake(_ impact: Impact) {
-        guard settings.screenShake else { return }
+        guard settings.screenShake, !UIAccessibility.isReduceMotionEnabled else { return }
         let amount: CGFloat = switch impact { case .light: 2; case .medium: 4; case .heavy: 8; case .crushing: 13 }
         shake = max(shake, amount)
     }
@@ -452,6 +452,10 @@ final class FightScene: SKScene {
         }
 
         hud.update(match)
+        if match.frameCount % 20 == 0, let view {
+            let a = Int((match.healthFraction(0) * 100).rounded()), b = Int((match.healthFraction(1) * 100).rounded())
+            view.accessibilityValue = "\(match.fighters[0].hero.name) \(a) percent, \(match.fighters[1].hero.name) \(b) percent, \(match.secondsLeft) seconds"
+        }
         controls?.setSuperReady(match.fighters[0].meter >= 100)
         updateCamera()
         if showHitboxes { drawHitboxes() }

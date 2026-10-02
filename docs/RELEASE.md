@@ -10,8 +10,9 @@
 2. **App Store Connect record.** New App → iOS, name *Aetheria Clash*
    (or *Aetheria Rising: Clash* if the full title is taken), primary language
    English (U.S.), bundle ID above, SKU `aetheria-clash`.
-3. **Privacy.** App Privacy → *Data Not Collected*. The privacy policy URL can
-   point at `PRIVACY.md` published anywhere (e.g. the repo on GitHub). The
+3. **Privacy.** App Privacy → *Data Not Collected*. Privacy policy URL:
+   https://thinkhale.github.io/AetherianWars/privacy.html (from `site/`,
+   deployed by the Website workflow). The
    bundle carries `PrivacyInfo.xcprivacy` (UserDefaults CA92.1, system boot
    time 35F9.1, no tracking).
 4. **Export compliance.** `ITSAppUsesNonExemptEncryption` is `NO`; no
@@ -67,7 +68,8 @@ Special and a devastating Crossing Art.
 
 **What's new (1.0):** The Crossing opens.
 
-**Support URL / Marketing URL:** the repository or the Aetheria Rising site.
+**Support URL:** https://thinkhale.github.io/AetherianWars/support.html
+**Marketing URL:** https://thinkhale.github.io/AetherianWars/
 
 ## Screenshots
 

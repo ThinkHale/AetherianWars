@@ -1,0 +1,43 @@
+:root {
+  --bg: #0d0b0a;
+  --panel: #171311;
+  --ink: #ece4d0;
+  --muted: #b5aa95;
+  --gold: #e0b44c;
+  --gold-deep: #9e7c38;
+  --crimson: #9e1f1f;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #2a1210 0%, var(--bg) 60%);
+  color: var(--ink);
+  font: 18px/1.6 "EB Garamond", Georgia, serif;
+  min-height: 100vh;
+}
+a { color: var(--gold); }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+header { padding: 48px 0 24px; text-align: center; }
+header img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 30px rgba(0,0,0,.6); }
+.kicker { font: 600 14px/1 Cinzel, serif; letter-spacing: .35em; color: var(--muted); margin: 20px 0 6px; }
+h1, h2, h3 { font-family: Cinzel, serif; color: var(--gold); line-height: 1.15; }
+h1 { font-size: clamp(30px, 6vw, 54px); margin: 0 0 10px; font-weight: 900; }
+h2 { font-size: 26px; margin: 40px 0 12px; }
+.tag { font-size: 21px; color: var(--ink); max-width: 640px; margin: 0 auto; }
+.badge { display: inline-block; margin-top: 22px; padding: 12px 22px; border: 1px solid var(--gold); border-radius: 10px; font: 700 15px Cinzel, serif; letter-spacing: .12em; color: var(--gold); text-decoration: none; }
+.hero-shot { margin: 24px auto 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(224,180,76,.45); box-shadow: 0 16px 60px rgba(0,0,0,.7); }
+.hero-shot img, .grid img { display: block; width: 100%; height: auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 18px; }
+.grid img { border-radius: 10px; border: 1px solid rgba(224,180,76,.3); }
+.panel { background: var(--panel); border: 1px solid rgba(224,180,76,.35); border-radius: 14px; padding: 20px 24px; }
+ul.features { padding-left: 20px; }
+ul.features li { margin: 6px 0; }
+.roster { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 20px; padding: 0; list-style: none; }
+.roster b { font-family: Cinzel, serif; color: var(--ink); font-size: 15px; }
+.roster span { color: var(--muted); }
+footer { margin: 56px 0 32px; text-align: center; color: var(--muted); font-size: 15px; }
+footer a { margin: 0 10px; }
+.doc { max-width: 720px; }
+.doc h1 { font-size: 34px; }
+@media (max-width: 600px) { body { font-size: 17px; } header { padding-top: 32px; } }

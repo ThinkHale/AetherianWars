@@ -54,6 +54,7 @@ jobs:
       - name: Build and test
         run: |
           set -o pipefail
+          mkdir -p build
           xcodebuild test \
             -project AetheriaClash.xcodeproj \
             -scheme AetheriaClash \

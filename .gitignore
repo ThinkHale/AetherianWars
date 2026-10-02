@@ -5,7 +5,6 @@ build/
 DerivedData/
 *.xcodeproj/xcuserdata/
 *.xcworkspace/xcuserdata/
-*.xcodeproj
 node_modules/
 art-inbox/**/*.png
 art-inbox/**/*.jpg
